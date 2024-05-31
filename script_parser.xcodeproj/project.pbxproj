@@ -14,6 +14,187 @@
 		691A65B82C01B90D00606936 /* script_parserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65B72C01B90D00606936 /* script_parserTests.swift */; };
 		691A65C22C01B90D00606936 /* script_parserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65C12C01B90D00606936 /* script_parserUITests.swift */; };
 		691A65C42C01B90D00606936 /* script_parserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65C32C01B90D00606936 /* script_parserUITestsLaunchTests.swift */; };
+		699E4DB82C0378E800B6D65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DB72C0378E800B6D65F /* AppDelegate.swift */; };
+		699E4DBA2C037C6400B6D65F /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DB92C037C6400B6D65F /* AppViewModel.swift */; };
+		699E4DBC2C03AFF900B6D65F /* TabTexte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DBB2C03AFF900B6D65F /* TabTexte.swift */; };
+		699E4DBE2C03B00200B6D65F /* TabPersonnages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DBD2C03B00200B6D65F /* TabPersonnages.swift */; };
+		699E4DC02C03B00B00B6D65F /* TabDialogOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DBF2C03B00B00B6D65F /* TabDialogOrder.swift */; };
+		699E4DC22C03B01500B6D65F /* TabDialogPerPersonnage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DC12C03B01500B6D65F /* TabDialogPerPersonnage.swift */; };
+		699E4DC42C03B01C00B6D65F /* TabExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DC32C03B01C00B6D65F /* TabExport.swift */; };
+		699E4DC62C03BACD00B6D65F /* FileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DC52C03BACD00B6D65F /* FileNode.swift */; };
+		699E4DC82C04709A00B6D65F /* SettingsPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DC72C04709A00B6D65F /* SettingsPanel.swift */; };
+		699E4DF22C0477A700B6D65F /* ~$LICHÉS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DC92C0477A600B6D65F /* ~$LICHÉS.doc */; };
+		699E4DF32C0477A700B6D65F /* ~$LICHÉS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DC92C0477A600B6D65F /* ~$LICHÉS.doc */; };
+		699E4DF42C0477A700B6D65F /* ~$LICHÉS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DC92C0477A600B6D65F /* ~$LICHÉS.doc */; };
+		699E4DF52C0477A700B6D65F /* 3SECONDES.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCA2C0477A600B6D65F /* 3SECONDES.doc */; };
+		699E4DF62C0477A700B6D65F /* 3SECONDES.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCA2C0477A600B6D65F /* 3SECONDES.doc */; };
+		699E4DF72C0477A700B6D65F /* 3SECONDES.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCA2C0477A600B6D65F /* 3SECONDES.doc */; };
+		699E4DF82C0477A700B6D65F /* CLICHÉS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCB2C0477A600B6D65F /* CLICHÉS.doc */; };
+		699E4DF92C0477A700B6D65F /* CLICHÉS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCB2C0477A600B6D65F /* CLICHÉS.doc */; };
+		699E4DFA2C0477A700B6D65F /* CLICHÉS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCB2C0477A600B6D65F /* CLICHÉS.doc */; };
+		699E4DFB2C0477A700B6D65F /* EP14.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCC2C0477A600B6D65F /* EP14.doc */; };
+		699E4DFC2C0477A700B6D65F /* EP14.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCC2C0477A600B6D65F /* EP14.doc */; };
+		699E4DFD2C0477A700B6D65F /* EP14.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCC2C0477A600B6D65F /* EP14.doc */; };
+		699E4DFE2C0477A700B6D65F /* EP16.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCD2C0477A600B6D65F /* EP16.doc */; };
+		699E4DFF2C0477A700B6D65F /* EP16.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCD2C0477A600B6D65F /* EP16.doc */; };
+		699E4E002C0477A700B6D65F /* EP16.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCD2C0477A600B6D65F /* EP16.doc */; };
+		699E4E012C0477A700B6D65F /* LES HYPERS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCE2C0477A600B6D65F /* LES HYPERS.doc */; };
+		699E4E022C0477A700B6D65F /* LES HYPERS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCE2C0477A600B6D65F /* LES HYPERS.doc */; };
+		699E4E032C0477A700B6D65F /* LES HYPERS.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCE2C0477A600B6D65F /* LES HYPERS.doc */; };
+		699E4E042C0477A700B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCF2C0477A600B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc */; };
+		699E4E052C0477A700B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCF2C0477A600B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc */; };
+		699E4E062C0477A700B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DCF2C0477A600B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc */; };
+		699E4E072C0477A700B6D65F /* MIND.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD02C0477A600B6D65F /* MIND.doc */; };
+		699E4E082C0477A700B6D65F /* MIND.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD02C0477A600B6D65F /* MIND.doc */; };
+		699E4E092C0477A700B6D65F /* MIND.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD02C0477A600B6D65F /* MIND.doc */; };
+		699E4E0A2C0477A700B6D65F /* MOBPSY03.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD12C0477A600B6D65F /* MOBPSY03.doc */; };
+		699E4E0B2C0477A700B6D65F /* MOBPSY03.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD12C0477A600B6D65F /* MOBPSY03.doc */; };
+		699E4E0C2C0477A700B6D65F /* MOBPSY03.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD12C0477A600B6D65F /* MOBPSY03.doc */; };
+		699E4E0D2C0477A700B6D65F /* MUTE COMPTAGE VO.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD22C0477A600B6D65F /* MUTE COMPTAGE VO.doc */; };
+		699E4E0E2C0477A700B6D65F /* MUTE COMPTAGE VO.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD22C0477A600B6D65F /* MUTE COMPTAGE VO.doc */; };
+		699E4E0F2C0477A700B6D65F /* MUTE COMPTAGE VO.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD22C0477A600B6D65F /* MUTE COMPTAGE VO.doc */; };
+		699E4E102C0477A700B6D65F /* RISING.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD32C0477A600B6D65F /* RISING.doc */; };
+		699E4E112C0477A700B6D65F /* RISING.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD32C0477A600B6D65F /* RISING.doc */; };
+		699E4E122C0477A700B6D65F /* RISING.doc in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD32C0477A600B6D65F /* RISING.doc */; };
+		699E4E132C0477A700B6D65F /* ~$ATENCY.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD52C0477A600B6D65F /* ~$ATENCY.docx */; };
+		699E4E142C0477A700B6D65F /* ~$ATENCY.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD52C0477A600B6D65F /* ~$ATENCY.docx */; };
+		699E4E152C0477A700B6D65F /* ~$ATENCY.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD52C0477A600B6D65F /* ~$ATENCY.docx */; };
+		699E4E162C0477A700B6D65F /* Blackwater Lane.converted.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD62C0477A600B6D65F /* Blackwater Lane.converted.txt */; };
+		699E4E172C0477A700B6D65F /* Blackwater Lane.converted.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD62C0477A600B6D65F /* Blackwater Lane.converted.txt */; };
+		699E4E182C0477A700B6D65F /* Blackwater Lane.converted.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD62C0477A600B6D65F /* Blackwater Lane.converted.txt */; };
+		699E4E192C0477A700B6D65F /* Blackwater Lane.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD72C0477A600B6D65F /* Blackwater Lane.docx */; };
+		699E4E1A2C0477A700B6D65F /* Blackwater Lane.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD72C0477A600B6D65F /* Blackwater Lane.docx */; };
+		699E4E1B2C0477A700B6D65F /* Blackwater Lane.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD72C0477A600B6D65F /* Blackwater Lane.docx */; };
+		699E4E1C2C0477A700B6D65F /* Gods of the deep - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD82C0477A600B6D65F /* Gods of the deep - CCSL.docx */; };
+		699E4E1D2C0477A700B6D65F /* Gods of the deep - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD82C0477A600B6D65F /* Gods of the deep - CCSL.docx */; };
+		699E4E1E2C0477A700B6D65F /* Gods of the deep - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD82C0477A600B6D65F /* Gods of the deep - CCSL.docx */; };
+		699E4E1F2C0477A700B6D65F /* LATENCY.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD92C0477A600B6D65F /* LATENCY.docx */; };
+		699E4E202C0477A700B6D65F /* LATENCY.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD92C0477A600B6D65F /* LATENCY.docx */; };
+		699E4E212C0477A700B6D65F /* LATENCY.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DD92C0477A600B6D65F /* LATENCY.docx */; };
+		699E4E222C0477A700B6D65F /* BREAKINGDEF.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDB2C0477A600B6D65F /* BREAKINGDEF.rtf */; };
+		699E4E232C0477A700B6D65F /* BREAKINGDEF.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDB2C0477A600B6D65F /* BREAKINGDEF.rtf */; };
+		699E4E242C0477A700B6D65F /* BREAKINGDEF.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDB2C0477A600B6D65F /* BREAKINGDEF.rtf */; };
+		699E4E252C0477A700B6D65F /* EBDEF03.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDC2C0477A600B6D65F /* EBDEF03.rtf */; };
+		699E4E262C0477A700B6D65F /* EBDEF03.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDC2C0477A600B6D65F /* EBDEF03.rtf */; };
+		699E4E272C0477A700B6D65F /* EBDEF03.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDC2C0477A600B6D65F /* EBDEF03.rtf */; };
+		699E4E282C0477A700B6D65F /* EBDEF18.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDD2C0477A600B6D65F /* EBDEF18.rtf */; };
+		699E4E292C0477A700B6D65F /* EBDEF18.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDD2C0477A600B6D65F /* EBDEF18.rtf */; };
+		699E4E2A2C0477A700B6D65F /* EBDEF18.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDD2C0477A600B6D65F /* EBDEF18.rtf */; };
+		699E4E2B2C0477A700B6D65F /* EBDEF22.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDE2C0477A600B6D65F /* EBDEF22.rtf */; };
+		699E4E2C2C0477A700B6D65F /* EBDEF22.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDE2C0477A600B6D65F /* EBDEF22.rtf */; };
+		699E4E2D2C0477A700B6D65F /* EBDEF22.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDE2C0477A600B6D65F /* EBDEF22.rtf */; };
+		699E4E2E2C0477A700B6D65F /* EL.105.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDF2C0477A600B6D65F /* EL.105.rtf */; };
+		699E4E2F2C0477A700B6D65F /* EL.105.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDF2C0477A600B6D65F /* EL.105.rtf */; };
+		699E4E302C0477A700B6D65F /* EL.105.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DDF2C0477A600B6D65F /* EL.105.rtf */; };
+		699E4E312C0477A700B6D65F /* LEB53.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE02C0477A600B6D65F /* LEB53.rtf */; };
+		699E4E322C0477A700B6D65F /* LEB53.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE02C0477A600B6D65F /* LEB53.rtf */; };
+		699E4E332C0477A700B6D65F /* LEB53.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE02C0477A600B6D65F /* LEB53.rtf */; };
+		699E4E342C0477A700B6D65F /* LEBDEF41.txt.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE12C0477A600B6D65F /* LEBDEF41.txt.rtf */; };
+		699E4E352C0477A700B6D65F /* LEBDEF41.txt.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE12C0477A600B6D65F /* LEBDEF41.txt.rtf */; };
+		699E4E362C0477A700B6D65F /* LEBDEF41.txt.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE12C0477A600B6D65F /* LEBDEF41.txt.rtf */; };
+		699E4E372C0477A700B6D65F /* live1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE22C0477A600B6D65F /* live1.rtf */; };
+		699E4E382C0477A700B6D65F /* live1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE22C0477A600B6D65F /* live1.rtf */; };
+		699E4E392C0477A700B6D65F /* live1.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE22C0477A600B6D65F /* live1.rtf */; };
+		699E4E3A2C0477A700B6D65F /* short5.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE32C0477A600B6D65F /* short5.rtf */; };
+		699E4E3B2C0477A700B6D65F /* short5.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE32C0477A600B6D65F /* short5.rtf */; };
+		699E4E3C2C0477A700B6D65F /* short5.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE32C0477A600B6D65F /* short5.rtf */; };
+		699E4E3D2C0477A700B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE52C0477A600B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx */; };
+		699E4E3E2C0477A700B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE52C0477A600B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx */; };
+		699E4E3F2C0477A700B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE52C0477A600B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx */; };
+		699E4E402C0477A700B6D65F /* ~$tch the Bullet - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE62C0477A600B6D65F /* ~$tch the Bullet - CCSL.docx */; };
+		699E4E412C0477A700B6D65F /* ~$tch the Bullet - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE62C0477A600B6D65F /* ~$tch the Bullet - CCSL.docx */; };
+		699E4E422C0477A700B6D65F /* ~$tch the Bullet - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE62C0477A600B6D65F /* ~$tch the Bullet - CCSL.docx */; };
+		699E4E432C0477A700B6D65F /* Catch the Bullet - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE72C0477A600B6D65F /* Catch the Bullet - CCSL.docx */; };
+		699E4E442C0477A700B6D65F /* Catch the Bullet - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE72C0477A600B6D65F /* Catch the Bullet - CCSL.docx */; };
+		699E4E452C0477A700B6D65F /* Catch the Bullet - CCSL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE72C0477A600B6D65F /* Catch the Bullet - CCSL.docx */; };
+		699E4E462C0477A700B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE82C0477A600B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx */; };
+		699E4E472C0477A700B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE82C0477A600B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx */; };
+		699E4E482C0477A700B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE82C0477A600B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx */; };
+		699E4E492C0477A700B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE92C0477A600B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF */; };
+		699E4E4A2C0477A700B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE92C0477A600B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF */; };
+		699E4E4B2C0477A700B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DE92C0477A600B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF */; };
+		699E4E4C2C0477A700B6D65F /* 3SECONDES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEB2C0477A600B6D65F /* 3SECONDES.txt */; };
+		699E4E4D2C0477A700B6D65F /* 3SECONDES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEB2C0477A600B6D65F /* 3SECONDES.txt */; };
+		699E4E4E2C0477A700B6D65F /* 3SECONDES.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEB2C0477A600B6D65F /* 3SECONDES.txt */; };
+		699E4E4F2C0477A700B6D65F /* EBDEF10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEC2C0477A600B6D65F /* EBDEF10.txt */; };
+		699E4E502C0477A700B6D65F /* EBDEF10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEC2C0477A600B6D65F /* EBDEF10.txt */; };
+		699E4E512C0477A700B6D65F /* EBDEF10.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEC2C0477A600B6D65F /* EBDEF10.txt */; };
+		699E4E522C0477A700B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DED2C0477A600B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt */; };
+		699E4E532C0477A700B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DED2C0477A600B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt */; };
+		699E4E542C0477A700B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DED2C0477A600B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt */; };
+		699E4E552C0477A700B6D65F /* SW Script.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEF2C0477A600B6D65F /* SW Script.xlsx */; };
+		699E4E562C0477A700B6D65F /* SW Script.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEF2C0477A600B6D65F /* SW Script.xlsx */; };
+		699E4E572C0477A700B6D65F /* SW Script.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 699E4DEF2C0477A600B6D65F /* SW Script.xlsx */; };
+		699E4E5D2C04BDEA00B6D65F /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E5C2C04BDEA00B6D65F /* Process.swift */; };
+		699E4E5E2C04BDEA00B6D65F /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E5C2C04BDEA00B6D65F /* Process.swift */; };
+		699E4E5F2C04BDEA00B6D65F /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E5C2C04BDEA00B6D65F /* Process.swift */; };
+		699E4E622C04F9EC00B6D65F /* Comptage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E612C04F9EC00B6D65F /* Comptage.swift */; };
+		699E4E632C04F9EC00B6D65F /* Comptage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E612C04F9EC00B6D65F /* Comptage.swift */; };
+		699E4E642C04F9EC00B6D65F /* Comptage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E612C04F9EC00B6D65F /* Comptage.swift */; };
+		699E4E662C04FF5900B6D65F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E652C04FF5900B6D65F /* Constants.swift */; };
+		699E4E672C04FF5900B6D65F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E652C04FF5900B6D65F /* Constants.swift */; };
+		699E4E682C04FF5900B6D65F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E652C04FF5900B6D65F /* Constants.swift */; };
+		699E4E6C2C051B8600B6D65F /* CoreXLSX in Frameworks */ = {isa = PBXBuildFile; productRef = 699E4E6B2C051B8600B6D65F /* CoreXLSX */; };
+		699E4E7D2C05359E00B6D65F /* XCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E752C05359D00B6D65F /* XCell.swift */; };
+		699E4E7E2C05359E00B6D65F /* XCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E752C05359D00B6D65F /* XCell.swift */; };
+		699E4E7F2C05359E00B6D65F /* XCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E752C05359D00B6D65F /* XCell.swift */; };
+		699E4E802C05359E00B6D65F /* XSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E762C05359D00B6D65F /* XSheet.swift */; };
+		699E4E812C05359E00B6D65F /* XSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E762C05359D00B6D65F /* XSheet.swift */; };
+		699E4E822C05359E00B6D65F /* XSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E762C05359D00B6D65F /* XSheet.swift */; };
+		699E4E832C05359E00B6D65F /* SwiftXlsx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E772C05359D00B6D65F /* SwiftXlsx.swift */; };
+		699E4E842C05359E00B6D65F /* SwiftXlsx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E772C05359D00B6D65F /* SwiftXlsx.swift */; };
+		699E4E852C05359E00B6D65F /* SwiftXlsx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E772C05359D00B6D65F /* SwiftXlsx.swift */; };
+		699E4E862C05359E00B6D65F /* XImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E782C05359D00B6D65F /* XImage.swift */; };
+		699E4E872C05359E00B6D65F /* XImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E782C05359D00B6D65F /* XImage.swift */; };
+		699E4E882C05359E00B6D65F /* XImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E782C05359D00B6D65F /* XImage.swift */; };
+		699E4E892C05359E00B6D65F /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E4E792C05359D00B6D65F /* icons.xcassets */; };
+		699E4E8A2C05359E00B6D65F /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E4E792C05359D00B6D65F /* icons.xcassets */; };
+		699E4E8B2C05359E00B6D65F /* icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 699E4E792C05359D00B6D65F /* icons.xcassets */; };
+		699E4E8C2C05359E00B6D65F /* Xtools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7A2C05359D00B6D65F /* Xtools.swift */; };
+		699E4E8D2C05359E00B6D65F /* Xtools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7A2C05359D00B6D65F /* Xtools.swift */; };
+		699E4E8E2C05359E00B6D65F /* Xtools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7A2C05359D00B6D65F /* Xtools.swift */; };
+		699E4E8F2C05359E00B6D65F /* XWorkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7B2C05359E00B6D65F /* XWorkBook.swift */; };
+		699E4E902C05359E00B6D65F /* XWorkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7B2C05359E00B6D65F /* XWorkBook.swift */; };
+		699E4E912C05359E00B6D65F /* XWorkBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7B2C05359E00B6D65F /* XWorkBook.swift */; };
+		699E4E922C05359E00B6D65F /* XFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7C2C05359E00B6D65F /* XFontName.swift */; };
+		699E4E932C05359E00B6D65F /* XFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7C2C05359E00B6D65F /* XFontName.swift */; };
+		699E4E942C05359E00B6D65F /* XFontName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E7C2C05359E00B6D65F /* XFontName.swift */; };
+		699E4E972C0535EA00B6D65F /* ZipArchive in Frameworks */ = {isa = PBXBuildFile; productRef = 699E4E962C0535EA00B6D65F /* ZipArchive */; };
+		699E4E992C05AB8C00B6D65F /* Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E982C05AB8C00B6D65F /* Pdf.swift */; };
+		699E4E9A2C05AB8C00B6D65F /* Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E982C05AB8C00B6D65F /* Pdf.swift */; };
+		699E4E9B2C05AB8C00B6D65F /* Pdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E982C05AB8C00B6D65F /* Pdf.swift */; };
+		699E4E9D2C05AC0F00B6D65F /* Txt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E9C2C05AC0F00B6D65F /* Txt.swift */; };
+		699E4E9E2C05AC0F00B6D65F /* Txt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E9C2C05AC0F00B6D65F /* Txt.swift */; };
+		699E4E9F2C05AC0F00B6D65F /* Txt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4E9C2C05AC0F00B6D65F /* Txt.swift */; };
+		699E4EA12C05ACC100B6D65F /* ParserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA02C05ACC100B6D65F /* ParserUtils.swift */; };
+		699E4EA22C05ACC100B6D65F /* ParserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA02C05ACC100B6D65F /* ParserUtils.swift */; };
+		699E4EA32C05ACC100B6D65F /* ParserUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA02C05ACC100B6D65F /* ParserUtils.swift */; };
+		699E4EA52C05AEFE00B6D65F /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA42C05AEFE00B6D65F /* IO.swift */; };
+		699E4EA62C05AEFE00B6D65F /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA42C05AEFE00B6D65F /* IO.swift */; };
+		699E4EA72C05AEFE00B6D65F /* IO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA42C05AEFE00B6D65F /* IO.swift */; };
+		699E4EAA2C05B01100B6D65F /* Docx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA92C05B01100B6D65F /* Docx.swift */; };
+		699E4EAB2C05B01100B6D65F /* Docx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA92C05B01100B6D65F /* Docx.swift */; };
+		699E4EAC2C05B01100B6D65F /* Docx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EA92C05B01100B6D65F /* Docx.swift */; };
+		699E4EB22C05B6F600B6D65F /* DocxReader.c in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EB12C05B6F600B6D65F /* DocxReader.c */; };
+		699E4EB32C05B6F600B6D65F /* DocxReader.c in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EB12C05B6F600B6D65F /* DocxReader.c */; };
+		699E4EB42C05B6F600B6D65F /* DocxReader.c in Sources */ = {isa = PBXBuildFile; fileRef = 699E4EB12C05B6F600B6D65F /* DocxReader.c */; };
+		699E4EE62C07312100B6D65F /* libxml2.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EDF2C07312000B6D65F /* libxml2.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4EE72C07312100B6D65F /* libicuuc.74.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EE02C07312000B6D65F /* libicuuc.74.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4EE82C07312100B6D65F /* liblzma.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EE12C07312000B6D65F /* liblzma.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4EE92C07312100B6D65F /* libicudata.74.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EE22C07312100B6D65F /* libicudata.74.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4EEA2C07312100B6D65F /* libicui18n.74.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EE32C07312100B6D65F /* libicui18n.74.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4EEB2C07312100B6D65F /* libzstd.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EE42C07312100B6D65F /* libzstd.1.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4EEC2C07312100B6D65F /* libzip.5.5.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 699E4EE52C07312100B6D65F /* libzip.5.5.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		699E4F322C07450000B6D65F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699E4F312C07450000B6D65F /* Entitlements.plist */; };
+		699E4F332C07450000B6D65F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699E4F312C07450000B6D65F /* Entitlements.plist */; };
+		699E4F342C07450000B6D65F /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 699E4F312C07450000B6D65F /* Entitlements.plist */; };
+		699E4F352C07456B00B6D65F /* libzip.5.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4EE52C07312100B6D65F /* libzip.5.5.dylib */; };
+		699E4F362C07456B00B6D65F /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4EDF2C07312000B6D65F /* libxml2.2.dylib */; };
+		699E4F3C2C07456B00B6D65F /* libicudata.74.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4F372C07456B00B6D65F /* libicudata.74.dylib */; };
+		699E4F3D2C07456B00B6D65F /* libicuuc.74.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4F382C07456B00B6D65F /* libicuuc.74.dylib */; };
+		699E4F3E2C07456B00B6D65F /* libicui18n.74.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4F392C07456B00B6D65F /* libicui18n.74.dylib */; };
+		699E4F3F2C07456B00B6D65F /* liblzma.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4F3A2C07456B00B6D65F /* liblzma.5.dylib */; };
+		699E4F402C07456B00B6D65F /* libzstd.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 699E4F3B2C07456B00B6D65F /* libzstd.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +214,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		699E4EB52C05BAFB00B6D65F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				699E4EE62C07312100B6D65F /* libxml2.2.dylib in CopyFiles */,
+				699E4EEC2C07312100B6D65F /* libzip.5.5.dylib in CopyFiles */,
+				699E4EE72C07312100B6D65F /* libicuuc.74.dylib in CopyFiles */,
+				699E4EE82C07312100B6D65F /* liblzma.5.dylib in CopyFiles */,
+				699E4EE92C07312100B6D65F /* libicudata.74.dylib in CopyFiles */,
+				699E4EEA2C07312100B6D65F /* libicui18n.74.dylib in CopyFiles */,
+				699E4EEB2C07312100B6D65F /* libzstd.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		691A65A22C01B90C00606936 /* script_parser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = script_parser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		691A65A52C01B90C00606936 /* script_parserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = script_parserApp.swift; sourceTree = "<group>"; };
@@ -45,6 +245,81 @@
 		691A65BD2C01B90D00606936 /* script_parserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = script_parserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		691A65C12C01B90D00606936 /* script_parserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = script_parserUITests.swift; sourceTree = "<group>"; };
 		691A65C32C01B90D00606936 /* script_parserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = script_parserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		691A65D02C01B94500606936 /* script-parser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "script-parser-Info.plist"; sourceTree = SOURCE_ROOT; };
+		699E4DB72C0378E800B6D65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		699E4DB92C037C6400B6D65F /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		699E4DBB2C03AFF900B6D65F /* TabTexte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTexte.swift; sourceTree = "<group>"; };
+		699E4DBD2C03B00200B6D65F /* TabPersonnages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPersonnages.swift; sourceTree = "<group>"; };
+		699E4DBF2C03B00B00B6D65F /* TabDialogOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDialogOrder.swift; sourceTree = "<group>"; };
+		699E4DC12C03B01500B6D65F /* TabDialogPerPersonnage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDialogPerPersonnage.swift; sourceTree = "<group>"; };
+		699E4DC32C03B01C00B6D65F /* TabExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabExport.swift; sourceTree = "<group>"; };
+		699E4DC52C03BACD00B6D65F /* FileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNode.swift; sourceTree = "<group>"; };
+		699E4DC72C04709A00B6D65F /* SettingsPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPanel.swift; sourceTree = "<group>"; };
+		699E4DC92C0477A600B6D65F /* ~$LICHÉS.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "~$LICHÉS.doc"; sourceTree = "<group>"; };
+		699E4DCA2C0477A600B6D65F /* 3SECONDES.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3SECONDES.doc; sourceTree = "<group>"; };
+		699E4DCB2C0477A600B6D65F /* CLICHÉS.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CLICHÉS.doc"; sourceTree = "<group>"; };
+		699E4DCC2C0477A600B6D65F /* EP14.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = EP14.doc; sourceTree = "<group>"; };
+		699E4DCD2C0477A600B6D65F /* EP16.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = EP16.doc; sourceTree = "<group>"; };
+		699E4DCE2C0477A600B6D65F /* LES HYPERS.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LES HYPERS.doc"; sourceTree = "<group>"; };
+		699E4DCF2C0477A600B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LOVE SPACE TIME COMPTAGE VO.doc"; sourceTree = "<group>"; };
+		699E4DD02C0477A600B6D65F /* MIND.doc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MIND.doc; sourceTree = "<group>"; };
+		699E4DD12C0477A600B6D65F /* MOBPSY03.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = MOBPSY03.doc; sourceTree = "<group>"; };
+		699E4DD22C0477A600B6D65F /* MUTE COMPTAGE VO.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MUTE COMPTAGE VO.doc"; sourceTree = "<group>"; };
+		699E4DD32C0477A600B6D65F /* RISING.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = RISING.doc; sourceTree = "<group>"; };
+		699E4DD52C0477A600B6D65F /* ~$ATENCY.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "~$ATENCY.docx"; sourceTree = "<group>"; };
+		699E4DD62C0477A600B6D65F /* Blackwater Lane.converted.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Blackwater Lane.converted.txt"; sourceTree = "<group>"; };
+		699E4DD72C0477A600B6D65F /* Blackwater Lane.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Blackwater Lane.docx"; sourceTree = "<group>"; };
+		699E4DD82C0477A600B6D65F /* Gods of the deep - CCSL.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gods of the deep - CCSL.docx"; sourceTree = "<group>"; };
+		699E4DD92C0477A600B6D65F /* LATENCY.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = LATENCY.docx; sourceTree = "<group>"; };
+		699E4DDB2C0477A600B6D65F /* BREAKINGDEF.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = BREAKINGDEF.rtf; sourceTree = "<group>"; };
+		699E4DDC2C0477A600B6D65F /* EBDEF03.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EBDEF03.rtf; sourceTree = "<group>"; };
+		699E4DDD2C0477A600B6D65F /* EBDEF18.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EBDEF18.rtf; sourceTree = "<group>"; };
+		699E4DDE2C0477A600B6D65F /* EBDEF22.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EBDEF22.rtf; sourceTree = "<group>"; };
+		699E4DDF2C0477A600B6D65F /* EL.105.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EL.105.rtf; sourceTree = "<group>"; };
+		699E4DE02C0477A600B6D65F /* LEB53.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = LEB53.rtf; sourceTree = "<group>"; };
+		699E4DE12C0477A600B6D65F /* LEBDEF41.txt.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = LEBDEF41.txt.rtf; sourceTree = "<group>"; };
+		699E4DE22C0477A600B6D65F /* live1.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = live1.rtf; sourceTree = "<group>"; };
+		699E4DE32C0477A600B6D65F /* short5.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = short5.rtf; sourceTree = "<group>"; };
+		699E4DE52C0477A600B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "~$nya_858p [23.98] BITC_[CCSL] FINAL.docx"; sourceTree = "<group>"; };
+		699E4DE62C0477A600B6D65F /* ~$tch the Bullet - CCSL.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "~$tch the Bullet - CCSL.docx"; sourceTree = "<group>"; };
+		699E4DE72C0477A600B6D65F /* Catch the Bullet - CCSL.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catch the Bullet - CCSL.docx"; sourceTree = "<group>"; };
+		699E4DE82C0477A600B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx"; sourceTree = "<group>"; };
+		699E4DE92C0477A600B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF"; sourceTree = "<group>"; };
+		699E4DEB2C0477A600B6D65F /* 3SECONDES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3SECONDES.txt; sourceTree = "<group>"; };
+		699E4DEC2C0477A600B6D65F /* EBDEF10.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EBDEF10.txt; sourceTree = "<group>"; };
+		699E4DED2C0477A600B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "YOU CAN'T RUN FOREVER_SCRIPT_VO.txt"; sourceTree = "<group>"; };
+		699E4DEF2C0477A600B6D65F /* SW Script.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SW Script.xlsx"; sourceTree = "<group>"; };
+		699E4E5C2C04BDEA00B6D65F /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		699E4E612C04F9EC00B6D65F /* Comptage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comptage.swift; sourceTree = "<group>"; };
+		699E4E652C04FF5900B6D65F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		699E4E752C05359D00B6D65F /* XCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCell.swift; sourceTree = "<group>"; };
+		699E4E762C05359D00B6D65F /* XSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XSheet.swift; sourceTree = "<group>"; };
+		699E4E772C05359D00B6D65F /* SwiftXlsx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftXlsx.swift; sourceTree = "<group>"; };
+		699E4E782C05359D00B6D65F /* XImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XImage.swift; sourceTree = "<group>"; };
+		699E4E792C05359D00B6D65F /* icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = icons.xcassets; sourceTree = "<group>"; };
+		699E4E7A2C05359D00B6D65F /* Xtools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Xtools.swift; sourceTree = "<group>"; };
+		699E4E7B2C05359E00B6D65F /* XWorkBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWorkBook.swift; sourceTree = "<group>"; };
+		699E4E7C2C05359E00B6D65F /* XFontName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XFontName.swift; sourceTree = "<group>"; };
+		699E4E982C05AB8C00B6D65F /* Pdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pdf.swift; sourceTree = "<group>"; };
+		699E4E9C2C05AC0F00B6D65F /* Txt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Txt.swift; sourceTree = "<group>"; };
+		699E4EA02C05ACC100B6D65F /* ParserUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserUtils.swift; sourceTree = "<group>"; };
+		699E4EA42C05AEFE00B6D65F /* IO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IO.swift; sourceTree = "<group>"; };
+		699E4EA82C05AFE500B6D65F /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		699E4EA92C05B01100B6D65F /* Docx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Docx.swift; sourceTree = "<group>"; };
+		699E4EB12C05B6F600B6D65F /* DocxReader.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DocxReader.c; sourceTree = "<group>"; };
+		699E4EDF2C07312000B6D65F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../lib/universal/libxml2.2.dylib; sourceTree = "<group>"; };
+		699E4EE02C07312000B6D65F /* libicuuc.74.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libicuuc.74.dylib; sourceTree = "<group>"; };
+		699E4EE12C07312000B6D65F /* liblzma.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liblzma.5.dylib; sourceTree = "<group>"; };
+		699E4EE22C07312100B6D65F /* libicudata.74.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libicudata.74.dylib; sourceTree = "<group>"; };
+		699E4EE32C07312100B6D65F /* libicui18n.74.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libicui18n.74.dylib; sourceTree = "<group>"; };
+		699E4EE42C07312100B6D65F /* libzstd.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libzstd.1.dylib; sourceTree = "<group>"; };
+		699E4EE52C07312100B6D65F /* libzip.5.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzip.5.5.dylib; path = ../../../lib/universal/libzip.5.5.dylib; sourceTree = "<group>"; };
+		699E4F312C07450000B6D65F /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Entitlements.plist; sourceTree = "<group>"; };
+		699E4F372C07456B00B6D65F /* libicudata.74.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicudata.74.dylib; path = ../../../lib/universal/libicudata.74.dylib; sourceTree = "<group>"; };
+		699E4F382C07456B00B6D65F /* libicuuc.74.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicuuc.74.dylib; path = ../../../lib/universal/libicuuc.74.dylib; sourceTree = "<group>"; };
+		699E4F392C07456B00B6D65F /* libicui18n.74.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicui18n.74.dylib; path = ../../../lib/universal/libicui18n.74.dylib; sourceTree = "<group>"; };
+		699E4F3A2C07456B00B6D65F /* liblzma.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = liblzma.5.dylib; path = ../../../lib/universal/liblzma.5.dylib; sourceTree = "<group>"; };
+		699E4F3B2C07456B00B6D65F /* libzstd.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzstd.1.dylib; path = ../../../lib/universal/libzstd.1.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +327,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E4F3C2C07456B00B6D65F /* libicudata.74.dylib in Frameworks */,
+				699E4F3D2C07456B00B6D65F /* libicuuc.74.dylib in Frameworks */,
+				699E4F3E2C07456B00B6D65F /* libicui18n.74.dylib in Frameworks */,
+				699E4F3F2C07456B00B6D65F /* liblzma.5.dylib in Frameworks */,
+				699E4F402C07456B00B6D65F /* libzstd.1.dylib in Frameworks */,
+				699E4F352C07456B00B6D65F /* libzip.5.5.dylib in Frameworks */,
+				699E4F362C07456B00B6D65F /* libxml2.2.dylib in Frameworks */,
+				699E4E6C2C051B8600B6D65F /* CoreXLSX in Frameworks */,
+				699E4E972C0535EA00B6D65F /* ZipArchive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +359,18 @@
 		691A65992C01B90C00606936 = {
 			isa = PBXGroup;
 			children = (
+				699E4EE22C07312100B6D65F /* libicudata.74.dylib */,
+				699E4EE32C07312100B6D65F /* libicui18n.74.dylib */,
+				699E4EE02C07312000B6D65F /* libicuuc.74.dylib */,
+				699E4EE12C07312000B6D65F /* liblzma.5.dylib */,
+				699E4EDF2C07312000B6D65F /* libxml2.2.dylib */,
+				699E4EE52C07312100B6D65F /* libzip.5.5.dylib */,
+				699E4EE42C07312100B6D65F /* libzstd.1.dylib */,
 				691A65A42C01B90C00606936 /* script_parser */,
 				691A65B62C01B90D00606936 /* script_parserTests */,
 				691A65C02C01B90D00606936 /* script_parserUITests */,
 				691A65A32C01B90C00606936 /* Products */,
+				699E4E6A2C051B8600B6D65F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,9 +387,27 @@
 		691A65A42C01B90C00606936 /* script_parser */ = {
 			isa = PBXGroup;
 			children = (
+				691A65D02C01B94500606936 /* script-parser-Info.plist */,
+				699E4F312C07450000B6D65F /* Entitlements.plist */,
+				699E4E742C05357400B6D65F /* XLSX */,
+				699E4E602C04F9D500B6D65F /* Structs */,
+				699E4E582C04AEF200B6D65F /* Views */,
 				691A65A52C01B90C00606936 /* script_parserApp.swift */,
-				691A65A72C01B90C00606936 /* ContentView.swift */,
+				699E4EA82C05AFE500B6D65F /* BridgingHeader.h */,
+				699E4EB12C05B6F600B6D65F /* DocxReader.c */,
+				699E4EA92C05B01100B6D65F /* Docx.swift */,
+				699E4DB72C0378E800B6D65F /* AppDelegate.swift */,
+				699E4EA42C05AEFE00B6D65F /* IO.swift */,
+				699E4E982C05AB8C00B6D65F /* Pdf.swift */,
+				699E4E9C2C05AC0F00B6D65F /* Txt.swift */,
+				699E4E5C2C04BDEA00B6D65F /* Process.swift */,
+				699E4EA02C05ACC100B6D65F /* ParserUtils.swift */,
+				699E4E652C04FF5900B6D65F /* Constants.swift */,
+				699E4E5A2C04B02C00B6D65F /* Models */,
+				699E4E592C04AF0000B6D65F /* Tabs */,
+				699E4DF12C0477A600B6D65F /* examples */,
 				691A65A92C01B90D00606936 /* Assets.xcassets */,
+				699E4E5B2C04B03500B6D65F /* Utils */,
 				691A65AE2C01B90D00606936 /* script_parser.entitlements */,
 				691A65AB2C01B90D00606936 /* Preview Content */,
 			);
@@ -129,6 +439,167 @@
 			path = script_parserUITests;
 			sourceTree = "<group>";
 		};
+		699E4DD42C0477A600B6D65F /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DC92C0477A600B6D65F /* ~$LICHÉS.doc */,
+				699E4DCA2C0477A600B6D65F /* 3SECONDES.doc */,
+				699E4DCB2C0477A600B6D65F /* CLICHÉS.doc */,
+				699E4DCC2C0477A600B6D65F /* EP14.doc */,
+				699E4DCD2C0477A600B6D65F /* EP16.doc */,
+				699E4DCE2C0477A600B6D65F /* LES HYPERS.doc */,
+				699E4DCF2C0477A600B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc */,
+				699E4DD02C0477A600B6D65F /* MIND.doc */,
+				699E4DD12C0477A600B6D65F /* MOBPSY03.doc */,
+				699E4DD22C0477A600B6D65F /* MUTE COMPTAGE VO.doc */,
+				699E4DD32C0477A600B6D65F /* RISING.doc */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		699E4DDA2C0477A600B6D65F /* docx */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DD52C0477A600B6D65F /* ~$ATENCY.docx */,
+				699E4DD62C0477A600B6D65F /* Blackwater Lane.converted.txt */,
+				699E4DD72C0477A600B6D65F /* Blackwater Lane.docx */,
+				699E4DD82C0477A600B6D65F /* Gods of the deep - CCSL.docx */,
+				699E4DD92C0477A600B6D65F /* LATENCY.docx */,
+			);
+			path = docx;
+			sourceTree = "<group>";
+		};
+		699E4DE42C0477A600B6D65F /* rtf */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DDB2C0477A600B6D65F /* BREAKINGDEF.rtf */,
+				699E4DDC2C0477A600B6D65F /* EBDEF03.rtf */,
+				699E4DDD2C0477A600B6D65F /* EBDEF18.rtf */,
+				699E4DDE2C0477A600B6D65F /* EBDEF22.rtf */,
+				699E4DDF2C0477A600B6D65F /* EL.105.rtf */,
+				699E4DE02C0477A600B6D65F /* LEB53.rtf */,
+				699E4DE12C0477A600B6D65F /* LEBDEF41.txt.rtf */,
+				699E4DE22C0477A600B6D65F /* live1.rtf */,
+				699E4DE32C0477A600B6D65F /* short5.rtf */,
+			);
+			path = rtf;
+			sourceTree = "<group>";
+		};
+		699E4DEA2C0477A600B6D65F /* SCRIPTS + COMPTAGES VO (pour test) */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DE52C0477A600B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx */,
+				699E4DE62C0477A600B6D65F /* ~$tch the Bullet - CCSL.docx */,
+				699E4DE72C0477A600B6D65F /* Catch the Bullet - CCSL.docx */,
+				699E4DE82C0477A600B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx */,
+				699E4DE92C0477A600B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF */,
+			);
+			path = "SCRIPTS + COMPTAGES VO (pour test)";
+			sourceTree = "<group>";
+		};
+		699E4DEE2C0477A600B6D65F /* txt */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DEB2C0477A600B6D65F /* 3SECONDES.txt */,
+				699E4DEC2C0477A600B6D65F /* EBDEF10.txt */,
+				699E4DED2C0477A600B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt */,
+			);
+			path = txt;
+			sourceTree = "<group>";
+		};
+		699E4DF02C0477A600B6D65F /* xlsx */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DEF2C0477A600B6D65F /* SW Script.xlsx */,
+			);
+			path = xlsx;
+			sourceTree = "<group>";
+		};
+		699E4DF12C0477A600B6D65F /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DD42C0477A600B6D65F /* doc */,
+				699E4DDA2C0477A600B6D65F /* docx */,
+				699E4DE42C0477A600B6D65F /* rtf */,
+				699E4DEA2C0477A600B6D65F /* SCRIPTS + COMPTAGES VO (pour test) */,
+				699E4DEE2C0477A600B6D65F /* txt */,
+				699E4DF02C0477A600B6D65F /* xlsx */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		699E4E582C04AEF200B6D65F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DC72C04709A00B6D65F /* SettingsPanel.swift */,
+				691A65A72C01B90C00606936 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		699E4E592C04AF0000B6D65F /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DBB2C03AFF900B6D65F /* TabTexte.swift */,
+				699E4DBD2C03B00200B6D65F /* TabPersonnages.swift */,
+				699E4DBF2C03B00B00B6D65F /* TabDialogOrder.swift */,
+				699E4DC12C03B01500B6D65F /* TabDialogPerPersonnage.swift */,
+				699E4DC32C03B01C00B6D65F /* TabExport.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		699E4E5A2C04B02C00B6D65F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DB92C037C6400B6D65F /* AppViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		699E4E5B2C04B03500B6D65F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				699E4DC52C03BACD00B6D65F /* FileNode.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		699E4E602C04F9D500B6D65F /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				699E4E612C04F9EC00B6D65F /* Comptage.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		699E4E6A2C051B8600B6D65F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				699E4F372C07456B00B6D65F /* libicudata.74.dylib */,
+				699E4F392C07456B00B6D65F /* libicui18n.74.dylib */,
+				699E4F382C07456B00B6D65F /* libicuuc.74.dylib */,
+				699E4F3A2C07456B00B6D65F /* liblzma.5.dylib */,
+				699E4F3B2C07456B00B6D65F /* libzstd.1.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		699E4E742C05357400B6D65F /* XLSX */ = {
+			isa = PBXGroup;
+			children = (
+				699E4E792C05359D00B6D65F /* icons.xcassets */,
+				699E4E772C05359D00B6D65F /* SwiftXlsx.swift */,
+				699E4E752C05359D00B6D65F /* XCell.swift */,
+				699E4E7C2C05359E00B6D65F /* XFontName.swift */,
+				699E4E782C05359D00B6D65F /* XImage.swift */,
+				699E4E762C05359D00B6D65F /* XSheet.swift */,
+				699E4E7A2C05359D00B6D65F /* Xtools.swift */,
+				699E4E7B2C05359E00B6D65F /* XWorkBook.swift */,
+			);
+			path = XLSX;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,12 +610,18 @@
 				691A659E2C01B90C00606936 /* Sources */,
 				691A659F2C01B90C00606936 /* Frameworks */,
 				691A65A02C01B90C00606936 /* Resources */,
+				699E4EB52C05BAFB00B6D65F /* CopyFiles */,
+				691D49B52C0A408A009C5FCF /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = script_parser;
+			packageProductDependencies = (
+				699E4E6B2C051B8600B6D65F /* CoreXLSX */,
+				699E4E962C0535EA00B6D65F /* ZipArchive */,
+			);
 			productName = script_parser;
 			productReference = 691A65A22C01B90C00606936 /* script_parser.app */;
 			productType = "com.apple.product-type.application";
@@ -200,10 +677,12 @@
 					};
 					691A65B22C01B90D00606936 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = 691A65A12C01B90C00606936;
 					};
 					691A65BC2C01B90D00606936 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 						TestTargetID = 691A65A12C01B90C00606936;
 					};
 				};
@@ -217,6 +696,10 @@
 				Base,
 			);
 			mainGroup = 691A65992C01B90C00606936;
+			packageReferences = (
+				699E4E692C051B1E00B6D65F /* XCRemoteSwiftPackageReference "CoreXLSX" */,
+				699E4E952C0535E200B6D65F /* XCRemoteSwiftPackageReference "ZipArchive" */,
+			);
 			productRefGroup = 691A65A32C01B90C00606936 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,8 +716,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E4E1F2C0477A700B6D65F /* LATENCY.docx in Resources */,
+				699E4E2E2C0477A700B6D65F /* EL.105.rtf in Resources */,
+				699E4E192C0477A700B6D65F /* Blackwater Lane.docx in Resources */,
+				699E4E3D2C0477A700B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx in Resources */,
+				699E4E162C0477A700B6D65F /* Blackwater Lane.converted.txt in Resources */,
+				699E4E522C0477A700B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt in Resources */,
+				699E4E552C0477A700B6D65F /* SW Script.xlsx in Resources */,
+				699E4E492C0477A700B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF in Resources */,
+				699E4E282C0477A700B6D65F /* EBDEF18.rtf in Resources */,
+				699E4E432C0477A700B6D65F /* Catch the Bullet - CCSL.docx in Resources */,
+				699E4E0D2C0477A700B6D65F /* MUTE COMPTAGE VO.doc in Resources */,
+				699E4DF82C0477A700B6D65F /* CLICHÉS.doc in Resources */,
+				699E4E342C0477A700B6D65F /* LEBDEF41.txt.rtf in Resources */,
+				699E4E012C0477A700B6D65F /* LES HYPERS.doc in Resources */,
+				699E4E1C2C0477A700B6D65F /* Gods of the deep - CCSL.docx in Resources */,
+				699E4E462C0477A700B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx in Resources */,
+				699E4E4C2C0477A700B6D65F /* 3SECONDES.txt in Resources */,
+				699E4E072C0477A700B6D65F /* MIND.doc in Resources */,
+				699E4E042C0477A700B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc in Resources */,
+				699E4E132C0477A700B6D65F /* ~$ATENCY.docx in Resources */,
+				699E4DF52C0477A700B6D65F /* 3SECONDES.doc in Resources */,
+				699E4DFB2C0477A700B6D65F /* EP14.doc in Resources */,
+				699E4E0A2C0477A700B6D65F /* MOBPSY03.doc in Resources */,
+				699E4E222C0477A700B6D65F /* BREAKINGDEF.rtf in Resources */,
+				699E4E4F2C0477A700B6D65F /* EBDEF10.txt in Resources */,
 				691A65AD2C01B90D00606936 /* Preview Assets.xcassets in Resources */,
+				699E4F322C07450000B6D65F /* Entitlements.plist in Resources */,
+				699E4E372C0477A700B6D65F /* live1.rtf in Resources */,
 				691A65AA2C01B90D00606936 /* Assets.xcassets in Resources */,
+				699E4E2B2C0477A700B6D65F /* EBDEF22.rtf in Resources */,
+				699E4E892C05359E00B6D65F /* icons.xcassets in Resources */,
+				699E4E3A2C0477A700B6D65F /* short5.rtf in Resources */,
+				699E4DF22C0477A700B6D65F /* ~$LICHÉS.doc in Resources */,
+				699E4E102C0477A700B6D65F /* RISING.doc in Resources */,
+				699E4E252C0477A700B6D65F /* EBDEF03.rtf in Resources */,
+				699E4E402C0477A700B6D65F /* ~$tch the Bullet - CCSL.docx in Resources */,
+				699E4E312C0477A700B6D65F /* LEB53.rtf in Resources */,
+				699E4DFE2C0477A700B6D65F /* EP16.doc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +761,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E4E262C0477A700B6D65F /* EBDEF03.rtf in Resources */,
+				699E4E232C0477A700B6D65F /* BREAKINGDEF.rtf in Resources */,
+				699E4E0E2C0477A700B6D65F /* MUTE COMPTAGE VO.doc in Resources */,
+				699E4E052C0477A700B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc in Resources */,
+				699E4E472C0477A700B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx in Resources */,
+				699E4E4D2C0477A700B6D65F /* 3SECONDES.txt in Resources */,
+				699E4E172C0477A700B6D65F /* Blackwater Lane.converted.txt in Resources */,
+				699E4E3B2C0477A700B6D65F /* short5.rtf in Resources */,
+				699E4DF62C0477A700B6D65F /* 3SECONDES.doc in Resources */,
+				699E4E1D2C0477A700B6D65F /* Gods of the deep - CCSL.docx in Resources */,
+				699E4E562C0477A700B6D65F /* SW Script.xlsx in Resources */,
+				699E4E022C0477A700B6D65F /* LES HYPERS.doc in Resources */,
+				699E4F332C07450000B6D65F /* Entitlements.plist in Resources */,
+				699E4E352C0477A700B6D65F /* LEBDEF41.txt.rtf in Resources */,
+				699E4DF92C0477A700B6D65F /* CLICHÉS.doc in Resources */,
+				699E4E292C0477A700B6D65F /* EBDEF18.rtf in Resources */,
+				699E4E1A2C0477A700B6D65F /* Blackwater Lane.docx in Resources */,
+				699E4E3E2C0477A700B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx in Resources */,
+				699E4E502C0477A700B6D65F /* EBDEF10.txt in Resources */,
+				699E4E412C0477A700B6D65F /* ~$tch the Bullet - CCSL.docx in Resources */,
+				699E4E202C0477A700B6D65F /* LATENCY.docx in Resources */,
+				699E4E082C0477A700B6D65F /* MIND.doc in Resources */,
+				699E4E532C0477A700B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt in Resources */,
+				699E4E0B2C0477A700B6D65F /* MOBPSY03.doc in Resources */,
+				699E4E142C0477A700B6D65F /* ~$ATENCY.docx in Resources */,
+				699E4E8A2C05359E00B6D65F /* icons.xcassets in Resources */,
+				699E4E2F2C0477A700B6D65F /* EL.105.rtf in Resources */,
+				699E4E2C2C0477A700B6D65F /* EBDEF22.rtf in Resources */,
+				699E4E112C0477A700B6D65F /* RISING.doc in Resources */,
+				699E4E442C0477A700B6D65F /* Catch the Bullet - CCSL.docx in Resources */,
+				699E4E322C0477A700B6D65F /* LEB53.rtf in Resources */,
+				699E4E382C0477A700B6D65F /* live1.rtf in Resources */,
+				699E4DFF2C0477A700B6D65F /* EP16.doc in Resources */,
+				699E4DFC2C0477A700B6D65F /* EP14.doc in Resources */,
+				699E4DF32C0477A700B6D65F /* ~$LICHÉS.doc in Resources */,
+				699E4E4A2C0477A700B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +804,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E4E272C0477A700B6D65F /* EBDEF03.rtf in Resources */,
+				699E4E242C0477A700B6D65F /* BREAKINGDEF.rtf in Resources */,
+				699E4E0F2C0477A700B6D65F /* MUTE COMPTAGE VO.doc in Resources */,
+				699E4E062C0477A700B6D65F /* LOVE SPACE TIME COMPTAGE VO.doc in Resources */,
+				699E4E482C0477A700B6D65F /* Kenya_858p %5b23.98%5d BITC_%5bCCSL%5d FINAL.docx in Resources */,
+				699E4E4E2C0477A700B6D65F /* 3SECONDES.txt in Resources */,
+				699E4E182C0477A700B6D65F /* Blackwater Lane.converted.txt in Resources */,
+				699E4E3C2C0477A700B6D65F /* short5.rtf in Resources */,
+				699E4DF72C0477A700B6D65F /* 3SECONDES.doc in Resources */,
+				699E4E1E2C0477A700B6D65F /* Gods of the deep - CCSL.docx in Resources */,
+				699E4E572C0477A700B6D65F /* SW Script.xlsx in Resources */,
+				699E4E032C0477A700B6D65F /* LES HYPERS.doc in Resources */,
+				699E4F342C07450000B6D65F /* Entitlements.plist in Resources */,
+				699E4E362C0477A700B6D65F /* LEBDEF41.txt.rtf in Resources */,
+				699E4DFA2C0477A700B6D65F /* CLICHÉS.doc in Resources */,
+				699E4E2A2C0477A700B6D65F /* EBDEF18.rtf in Resources */,
+				699E4E1B2C0477A700B6D65F /* Blackwater Lane.docx in Resources */,
+				699E4E3F2C0477A700B6D65F /* ~$nya_858p [23.98] BITC_[CCSL] FINAL.docx in Resources */,
+				699E4E512C0477A700B6D65F /* EBDEF10.txt in Resources */,
+				699E4E422C0477A700B6D65F /* ~$tch the Bullet - CCSL.docx in Resources */,
+				699E4E212C0477A700B6D65F /* LATENCY.docx in Resources */,
+				699E4E092C0477A700B6D65F /* MIND.doc in Resources */,
+				699E4E542C0477A700B6D65F /* YOU CAN'T RUN FOREVER_SCRIPT_VO.txt in Resources */,
+				699E4E0C2C0477A700B6D65F /* MOBPSY03.doc in Resources */,
+				699E4E152C0477A700B6D65F /* ~$ATENCY.docx in Resources */,
+				699E4E8B2C05359E00B6D65F /* icons.xcassets in Resources */,
+				699E4E302C0477A700B6D65F /* EL.105.rtf in Resources */,
+				699E4E2D2C0477A700B6D65F /* EBDEF22.rtf in Resources */,
+				699E4E122C0477A700B6D65F /* RISING.doc in Resources */,
+				699E4E452C0477A700B6D65F /* Catch the Bullet - CCSL.docx in Resources */,
+				699E4E332C0477A700B6D65F /* LEB53.rtf in Resources */,
+				699E4E392C0477A700B6D65F /* live1.rtf in Resources */,
+				699E4E002C0477A700B6D65F /* EP16.doc in Resources */,
+				699E4DFD2C0477A700B6D65F /* EP14.doc in Resources */,
+				699E4DF42C0477A700B6D65F /* ~$LICHÉS.doc in Resources */,
+				699E4E4B2C0477A700B6D65F /* Miss Willoughby - CCSL 23.98 fps (561102xCDD60).PDF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		691D49B52C0A408A009C5FCF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Path to the built product\nBUILT_PRODUCTS_DIR=\"${BUILT_PRODUCTS_DIR:-.}\"\nFRAMEWORKS_DIR=\"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}\"\n\n# Path to your app binary\nAPP_BINARY=\"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n\n\n\n# Update app binary to reference libzip.dylib via @rpath\nif [ -f \"$APP_BINARY\" ]; then\n    echo \"Updating app binary to reference libzip.dylib via @rpath\"\n    install_name_tool -change /opt/homebrew/opt/libzip/lib/libzip.5.dylib @rpath/libzip.5.5.dylib \"$APP_BINARY\" \n    install_name_tool -change /opt/homebrew/opt/libxml2/lib/libxml2.2.dylib @rpath/libxml2.2.dylib \"$APP_BINARY\"\n    install_name_tool -change /opt/homebrew/opt/xz/lib/liblzma.5.dylib @rpath/liblzma.5.dylib \"$APP_BINARY\"\n    install_name_tool -change /opt/homebrew/opt/icu4c/lib/libicui18n.74.dylib @rpath/libicui18n.74.dylib \"$APP_BINARY\"\n    install_name_tool -change /opt/homebrew/opt/zstd/lib/libzstd.1.dylib @rpath/libzstd.1.dylib \"$APP_BINARY\"\n    install_name_tool -change /opt/homebrew/opt/icu4c/lib/libicuuc.74.dylib @rpath/libicuuc.74.dylib \"$APP_BINARY\"\n    install_name_tool -change /opt/homebrew/opt/icu4c/lib/libicudata.74.dylib @rpath/libicudata.74.dylib \"$APP_BINARY\"\n\n    install_name_tool -change /usr/local/opt/libzip/lib/libzip.5.dylib @rpath/libzip.5.5.dylib \"$APP_BINARY\" \n    install_name_tool -change /usr/local/opt/libxml2/lib/libxml2.2.dylib @rpath/libxml2.2.dylib \"$APP_BINARY\" \n    install_name_tool -change /usr/local/opt/xz/lib/liblzma.5.dylib @rpath/liblzma.5.dylib  \"$APP_BINARY\" \n    install_name_tool -change /usr/local/opt/icu4c/lib/libicui18n.74.dylib @rpath/libicui18n.74.dylib  \"$APP_BINARY\" \n    install_name_tool -change /usr/local/opt/zstd/lib/libzstd.1.dylib @rpath/libzstd.1.dylib \"$APP_BINARY\" \n    install_name_tool -change /usr/local/opt/icu4c/lib/libicuuc.74.dylib  @rpath/libicuuc.74.dylib  \"$APP_BINARY\" \n    install_name_tool -change /usr/local/opt/icu4c/lib/libicudata.74.dylib  @rpath/libicudata.74.dylib \"$APP_BINARY\" \n\nelse\n    echo \"App binary not found!\"\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		691A659E2C01B90C00606936 /* Sources */ = {
@@ -260,7 +871,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				691A65A82C01B90C00606936 /* ContentView.swift in Sources */,
+				699E4DC62C03BACD00B6D65F /* FileNode.swift in Sources */,
+				699E4E992C05AB8C00B6D65F /* Pdf.swift in Sources */,
+				699E4E8C2C05359E00B6D65F /* Xtools.swift in Sources */,
+				699E4DC02C03B00B00B6D65F /* TabDialogOrder.swift in Sources */,
+				699E4E8F2C05359E00B6D65F /* XWorkBook.swift in Sources */,
+				699E4DC42C03B01C00B6D65F /* TabExport.swift in Sources */,
+				699E4EAA2C05B01100B6D65F /* Docx.swift in Sources */,
+				699E4EB22C05B6F600B6D65F /* DocxReader.c in Sources */,
+				699E4E862C05359E00B6D65F /* XImage.swift in Sources */,
+				699E4DBE2C03B00200B6D65F /* TabPersonnages.swift in Sources */,
+				699E4DBC2C03AFF900B6D65F /* TabTexte.swift in Sources */,
+				699E4EA12C05ACC100B6D65F /* ParserUtils.swift in Sources */,
+				699E4E832C05359E00B6D65F /* SwiftXlsx.swift in Sources */,
+				699E4DB82C0378E800B6D65F /* AppDelegate.swift in Sources */,
+				699E4E922C05359E00B6D65F /* XFontName.swift in Sources */,
+				699E4DBA2C037C6400B6D65F /* AppViewModel.swift in Sources */,
+				699E4E802C05359E00B6D65F /* XSheet.swift in Sources */,
 				691A65A62C01B90C00606936 /* script_parserApp.swift in Sources */,
+				699E4E622C04F9EC00B6D65F /* Comptage.swift in Sources */,
+				699E4DC82C04709A00B6D65F /* SettingsPanel.swift in Sources */,
+				699E4E662C04FF5900B6D65F /* Constants.swift in Sources */,
+				699E4E7D2C05359E00B6D65F /* XCell.swift in Sources */,
+				699E4E9D2C05AC0F00B6D65F /* Txt.swift in Sources */,
+				699E4DC22C03B01500B6D65F /* TabDialogPerPersonnage.swift in Sources */,
+				699E4EA52C05AEFE00B6D65F /* IO.swift in Sources */,
+				699E4E5D2C04BDEA00B6D65F /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +904,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E4EA22C05ACC100B6D65F /* ParserUtils.swift in Sources */,
+				699E4E842C05359E00B6D65F /* SwiftXlsx.swift in Sources */,
 				691A65B82C01B90D00606936 /* script_parserTests.swift in Sources */,
+				699E4EAB2C05B01100B6D65F /* Docx.swift in Sources */,
+				699E4E872C05359E00B6D65F /* XImage.swift in Sources */,
+				699E4E8D2C05359E00B6D65F /* Xtools.swift in Sources */,
+				699E4E902C05359E00B6D65F /* XWorkBook.swift in Sources */,
+				699E4E632C04F9EC00B6D65F /* Comptage.swift in Sources */,
+				699E4EB32C05B6F600B6D65F /* DocxReader.c in Sources */,
+				699E4E9A2C05AB8C00B6D65F /* Pdf.swift in Sources */,
+				699E4EA62C05AEFE00B6D65F /* IO.swift in Sources */,
+				699E4E812C05359E00B6D65F /* XSheet.swift in Sources */,
+				699E4E9E2C05AC0F00B6D65F /* Txt.swift in Sources */,
+				699E4E932C05359E00B6D65F /* XFontName.swift in Sources */,
+				699E4E7E2C05359E00B6D65F /* XCell.swift in Sources */,
+				699E4E5E2C04BDEA00B6D65F /* Process.swift in Sources */,
+				699E4E672C04FF5900B6D65F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +928,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699E4E9B2C05AB8C00B6D65F /* Pdf.swift in Sources */,
+				699E4E8E2C05359E00B6D65F /* Xtools.swift in Sources */,
+				699E4E7F2C05359E00B6D65F /* XCell.swift in Sources */,
+				699E4E942C05359E00B6D65F /* XFontName.swift in Sources */,
+				699E4E822C05359E00B6D65F /* XSheet.swift in Sources */,
+				699E4E682C04FF5900B6D65F /* Constants.swift in Sources */,
+				699E4E9F2C05AC0F00B6D65F /* Txt.swift in Sources */,
+				699E4EA32C05ACC100B6D65F /* ParserUtils.swift in Sources */,
+				699E4EB42C05B6F600B6D65F /* DocxReader.c in Sources */,
+				699E4EAC2C05B01100B6D65F /* Docx.swift in Sources */,
 				691A65C42C01B90D00606936 /* script_parserUITestsLaunchTests.swift in Sources */,
+				699E4E882C05359E00B6D65F /* XImage.swift in Sources */,
+				699E4E642C04F9EC00B6D65F /* Comptage.swift in Sources */,
+				699E4EA72C05AEFE00B6D65F /* IO.swift in Sources */,
+				699E4E912C05359E00B6D65F /* XWorkBook.swift in Sources */,
 				691A65C22C01B90D00606936 /* script_parserUITests.swift in Sources */,
+				699E4E852C05359E00B6D65F /* SwiftXlsx.swift in Sources */,
+				699E4E5F2C04BDEA00B6D65F /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +998,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/script_parser/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -349,6 +1018,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/opt/libxml2/lib,
+					/opt/homebrew/opt/libzip/lib,
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -393,6 +1066,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/script_parser/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -406,6 +1080,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/opt/libxml2/lib,
+					/opt/homebrew/opt/libzip/lib,
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -428,16 +1106,23 @@
 				DEVELOPMENT_TEAM = 3UCPV3W9SM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = /opt/homebrew/opt/libzip/include;
+				INFOPLIST_FILE = "script-parser-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scripti;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /Users/jd/dev/lib/universal;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.weand.scriptparser2.script-parser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = script_parser/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -455,16 +1140,23 @@
 				DEVELOPMENT_TEAM = 3UCPV3W9SM;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = /opt/homebrew/opt/libzip/include;
+				INFOPLIST_FILE = "script-parser-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Scripti;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = /Users/jd/dev/lib/universal;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.weand.scriptparser2.script-parser";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = script_parser/BridgingHeader.h;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -474,6 +1166,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3UCPV3W9SM;
@@ -483,6 +1176,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.weand.scriptparser2.script-parserTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/script_parser.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/script_parser";
 			};
@@ -493,6 +1187,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3UCPV3W9SM;
@@ -511,6 +1206,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3UCPV3W9SM;
@@ -519,6 +1215,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.weand.scriptparser2.script-parserUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = script_parser;
 			};
@@ -528,6 +1225,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3UCPV3W9SM;
@@ -581,6 +1279,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		699E4E692C051B1E00B6D65F /* XCRemoteSwiftPackageReference "CoreXLSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CoreOffice/CoreXLSX.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.2;
+			};
+		};
+		699E4E952C0535E200B6D65F /* XCRemoteSwiftPackageReference "ZipArchive" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZipArchive/ZipArchive";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		699E4E6B2C051B8600B6D65F /* CoreXLSX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 699E4E692C051B1E00B6D65F /* XCRemoteSwiftPackageReference "CoreXLSX" */;
+			productName = CoreXLSX;
+		};
+		699E4E962C0535EA00B6D65F /* ZipArchive */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 699E4E952C0535E200B6D65F /* XCRemoteSwiftPackageReference "ZipArchive" */;
+			productName = ZipArchive;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 691A659A2C01B90C00606936 /* Project object */;
 }

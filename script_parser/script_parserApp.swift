@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+class GlobalSettingsViewModel: ObservableObject {
+    @Published var blockSize: Int = 50
+}
 @main
 struct script_parserApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+  
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings{
+            
         }
     }
 }

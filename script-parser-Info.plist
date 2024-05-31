@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>CFBundleName</key>
+	<string>Scripti</string>
+	<key>NSPicturesFolderUsageDescription</key>
+	<string>Your app needs access to the Pictures folder to function properly.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>Your app needs access to the Downloads folder to function properly.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Your app needs access to the Documents folder to function properly.</string>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>Your app needs access to the Desktop folder to function properly.</string>
+</dict>
+</plist>
