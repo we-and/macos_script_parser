@@ -9,7 +9,92 @@ import SwiftUI
 import AppKit
 
 
+struct NodeView: View {
+    @State private var isExpanded: Bool = false
+    let node: FileNode
+    let isSelected: Bool
+    let model:AppViewModel
+    let toggleExpand: () -> Void
 
+    var body: some View {
+        Button(action: {
+          //  isExpanded.toggle()
+            if node.isDirectory {
+                toggleExpand()
+            }else{
+                selectFile(node)
+            }
+        }) {
+            HStack {
+                if node.isDirectory {
+                    Image(systemName:isSelected ? "folder" : "folder")
+                     //   .resizable()
+                        .foregroundColor( .brown)
+                       //z                      .frame(width: 12, height: 12)//Image(systemName: isExpanded ? "folder" : "folder.fill")
+                    //        }
+                } else {
+                    Image(systemName: "doc")
+                        .foregroundColor(node.isDirectory ? .brown : (isSupportedExtension(ext: node.url.pathExtension) ? .blue :Color(red:0.5,green: 0.5,blue: 0.5)))
+
+                }
+                
+                Text(node.url.lastPathComponent )
+                    .foregroundColor(node.isDirectory ? .brown : (isSupportedExtension(ext: node.url.pathExtension) ? .blue :Color(red:0.5,green: 0.5,blue: 0.5)))
+                    .fontWeight(node.isDirectory ? .bold : .regular)
+                Spacer()
+            } .contextMenu {
+                Button("Open") {
+                    
+                    
+                    if node.isDirectory {
+                        // Open directory in Finder
+                        NSWorkspace.shared.open(node.url)
+                    } else {
+                        // Open file with default application
+                        NSWorkspace.shared.open(node.url)
+                    }
+                    
+                }
+                
+            }
+        }   .buttonStyle(PlainButtonStyle())
+    }
+        
+    func selectFile(_ node: FileNode) {
+        model.processFile(node.url)
+    }
+}
+
+
+struct NodeListView: View {
+    let node: FileNode
+    @Binding var expandedNodes: Set<URL>
+    let model:AppViewModel
+    
+    
+    var body: some View {
+        NodeView(node: node, isSelected: expandedNodes.contains(node.url),model:model) {
+            toggleExpand(node)
+        }
+        if expandedNodes.contains(node.url), let children = node.children {
+            ForEach(children, id: \.id) { child in
+                NodeListView(node: child, expandedNodes: $expandedNodes,model: model)
+                    .padding(.leading, 20)
+            }
+        }
+    }
+
+        
+        
+    private func toggleExpand(_ node: FileNode) {
+        print("toggle \(expandedNodes)")
+        if expandedNodes.contains(node.url) {
+            expandedNodes.remove(node.url)
+        } else {
+            expandedNodes.insert(node.url)
+        }
+    }
+}
 struct ContentView: View {
 
     @EnvironmentObject var appDelegate: AppDelegate
@@ -26,6 +111,12 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
+            List {
+                     ForEach([rootNode], id: \.id) { node in
+                         NodeListView(node: node, expandedNodes: $expandedNodes,model:appViewModel)
+                     }
+                 } .frame(minWidth: 300)
+            /*
             // Left Panel: Folder Tree View
             List {
                            OutlineGroup(rootNode, children: \.children) { node in
@@ -51,7 +142,7 @@ struct ContentView: View {
                        .onAppear {
                                        expandedNodes.insert(rootNode.url)
                                    }
-            
+            */
             // Right Panel: Tab View with 5 Tabs
             VStack {
                 // Title Header
@@ -121,7 +212,7 @@ struct ContentView: View {
                 .frame(minWidth: 300)
                 .onChange(of: appViewModel.shouldOpenFolder) { newValue in
                     if newValue {
-                        openFolder();
+                        openWorkFolder();
                         //                               viewModel.openFolder()
                         appViewModel.shouldOpenFolder = false // Reset the flag
                     }
@@ -256,7 +347,7 @@ struct ContentView: View {
     
     
     // Open Folder and Set as Root Node
-      func openFolder() {
+      func openWorkFolder() {
           let panel = NSOpenPanel()
           panel.canChooseDirectories = true
           panel.canChooseFiles = false
@@ -266,6 +357,8 @@ struct ContentView: View {
                   if let url = panel.url {
                       rootNode = FileNode(url: url)
                       expandedNodes.removeAll()
+                      expandedNodes.insert(url)
+                 
                   }
               }
           }

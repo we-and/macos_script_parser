@@ -50,7 +50,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ObservableObject {
         mainMenu.addItem(fileMenuItem)
         let fileMenu = NSMenu(title: "Fichier")
         fileMenuItem.submenu = fileMenu
-        fileMenu.addItem(withTitle: "Ouvrir un dossier de travail...", action: #selector(openFolder), keyEquivalent: "n")
+        fileMenu.addItem(withTitle: "Ouvrir un dossier de travail...", action: #selector(openWorkFolder), keyEquivalent: "n")
         fileMenu.addItem(withTitle: "Ouvrir un fichier de script...", action: #selector(openScript), keyEquivalent: "n")
 
         // Settings menu
@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ObservableObject {
         NSApp.mainMenu = mainMenu
     }
     
-    @objc func openFolder() {
+    @objc func openWorkFolder() {
         appViewModel.shouldOpenFolder = true
        }
 
