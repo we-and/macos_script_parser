@@ -14,6 +14,8 @@
 		691A65B82C01B90D00606936 /* script_parserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65B72C01B90D00606936 /* script_parserTests.swift */; };
 		691A65C22C01B90D00606936 /* script_parserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65C12C01B90D00606936 /* script_parserUITests.swift */; };
 		691A65C42C01B90D00606936 /* script_parserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65C32C01B90D00606936 /* script_parserUITestsLaunchTests.swift */; };
+		691D49B72C0A74F8009C5FCF /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49B62C0A74F8009C5FCF /* NodeView.swift */; };
+		691D49B92C0A7512009C5FCF /* FileNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49B82C0A7512009C5FCF /* FileNodeView.swift */; };
 		699E4DB82C0378E800B6D65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DB72C0378E800B6D65F /* AppDelegate.swift */; };
 		699E4DBA2C037C6400B6D65F /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DB92C037C6400B6D65F /* AppViewModel.swift */; };
 		699E4DBC2C03AFF900B6D65F /* TabTexte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DBB2C03AFF900B6D65F /* TabTexte.swift */; };
@@ -246,6 +248,8 @@
 		691A65C12C01B90D00606936 /* script_parserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = script_parserUITests.swift; sourceTree = "<group>"; };
 		691A65C32C01B90D00606936 /* script_parserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = script_parserUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		691A65D02C01B94500606936 /* script-parser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "script-parser-Info.plist"; sourceTree = SOURCE_ROOT; };
+		691D49B62C0A74F8009C5FCF /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
+		691D49B82C0A7512009C5FCF /* FileNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNodeView.swift; sourceTree = "<group>"; };
 		699E4DB72C0378E800B6D65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699E4DB92C037C6400B6D65F /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		699E4DBB2C03AFF900B6D65F /* TabTexte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTexte.swift; sourceTree = "<group>"; };
@@ -569,6 +573,8 @@
 			isa = PBXGroup;
 			children = (
 				699E4E612C04F9EC00B6D65F /* Comptage.swift */,
+				691D49B62C0A74F8009C5FCF /* NodeView.swift */,
+				691D49B82C0A7512009C5FCF /* FileNodeView.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -895,7 +901,9 @@
 				699E4E7D2C05359E00B6D65F /* XCell.swift in Sources */,
 				699E4E9D2C05AC0F00B6D65F /* Txt.swift in Sources */,
 				699E4DC22C03B01500B6D65F /* TabDialogPerPersonnage.swift in Sources */,
+				691D49B92C0A7512009C5FCF /* FileNodeView.swift in Sources */,
 				699E4EA52C05AEFE00B6D65F /* IO.swift in Sources */,
+				691D49B72C0A74F8009C5FCF /* NodeView.swift in Sources */,
 				699E4E5D2C04BDEA00B6D65F /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
