@@ -8,7 +8,8 @@
 import Foundation
 import Foundation
 import Combine
-
+import SwiftUI
+import PDFKit
 class AppViewModel: ObservableObject {
     @Published var shouldOpenFolder: Bool = false
 
@@ -67,6 +68,14 @@ class AppViewModel: ObservableObject {
     }
     func processPdfFile(url:URL){
         print("processPdfFile ")
+        showPDFWithRectangleDrawing(pdfPath:url.path)
+    }
+    func doCrop(pdfPath:String,left: Double, right: Double, top: Double, bottom: Double){
+        let        outputPath=pdfPath.replacingOccurrences(of: ".pdf", with: ".cropped.pdf")
+        cropPDF(pdfPath: pdfPath,outputPath: outputPath , left: left, right: right, top: top, bottom: bottom)
+    }
+    func processCroppedPdfFile(url:URL){
+        print("processPdfFile ")
         let text=extractTextFromPDF(url: url)
         guard let text=text else{
             print("TextExtraction failed")
@@ -83,6 +92,64 @@ class AppViewModel: ObservableObject {
         saveStringToFile(text,to:newurl)
         print("url \(newurl.path)")
         processTxtFile(url: newurl)
+    }
+    func showPDFWithRectangleDrawing(pdfPath: String) {
+        let pageNumber=10
+            let window = NSWindow(
+                contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
+                styleMask: [.titled, .closable, .resizable],
+                backing: .buffered, defer: false)
+            window.center()
+            window.setFrameAutosaveName("PDF Window")
+            window.contentView = NSHostingView(rootView: RectangleDrawingView(pdfPath: pdfPath, pageNumber: pageNumber ,onOk: { rect in
+                // Convert rect to appropriate coordinates for cropping
+                self.doCrop1(pdfPath: pdfPath, cropRect: rect)
+                window.close()
+            },
+            onCancel: {
+                window.close()
+            },model:self))
+            window.makeKeyAndOrderFront(nil)
+        }
+    
+    func doCrop1(pdfPath:String, cropRect:CGRect){
+        guard let document = PDFDocument(url: URL(fileURLWithPath: pdfPath)) else {
+                print("Failed to open PDF document.")
+                return
+            }
+
+            guard let page = document.page(at: 0) else { // Assuming single page for simplicity
+                print("Failed to get PDF page.")
+                return
+            }
+
+        // Calculate crop box in PDF coordinates
+         let mediaBox = page.bounds(for: .mediaBox)
+         let viewWidth = UIScreen.main.bounds.width // Assuming you use the screen width for the view size
+         let viewHeight = UIScreen.main.bounds.height // Assuming you use the screen height for the view size
+         
+         // Calculate scale factors based on the actual size of the displayed PDF page in the view
+         let scaleX = mediaBox.width / viewWidth
+         let scaleY = mediaBox.height / viewHeight
+         
+         let left = cropRect.minX * scaleX
+         let bottom = mediaBox.height - (cropRect.maxY * scaleY)
+         let width = cropRect.width * scaleX
+         let height = cropRect.height * scaleY
+        
+        let right=left+width
+        let top = bottom-height
+        print("Crop")
+        
+        print("Height \(height)")
+        print("Width \(width)")
+        print("Left \(left)")
+        print("Bottom \(bottom)")
+        print("Right \(right)")
+        print("Top \(top)")
+        print("Right \(right)")
+
+        doCrop(pdfPath: pdfPath, left: left, right:left+width, top: bottom-height, bottom: bottom)
     }
     func processDocxFile(url:URL){
         readDocxFile(atPath: url.path)

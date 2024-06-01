@@ -30,3 +30,33 @@ func extractTextFromPDF(url: URL) -> String? {
     
     return extractedText
 }
+
+func cropPDF(pdfPath: String, outputPath: String, left: Double, right: Double, top: Double, bottom: Double) {
+    guard let document = PDFDocument(url: URL(fileURLWithPath: pdfPath)) else {
+        print("Failed to open PDF document.")
+        return
+    }
+
+    let pageCount = document.pageCount
+
+    for pageIndex in 0..<pageCount {
+        guard let page = document.page(at: pageIndex) else {
+            continue
+        }
+        
+        var cropBox = page.bounds(for: .cropBox)
+        cropBox.origin.x += CGFloat(left)
+        cropBox.origin.y += CGFloat(bottom)
+        cropBox.size.width -= CGFloat(left + right)
+        cropBox.size.height -= CGFloat(top + bottom)
+        
+        page.setBounds(cropBox, for: .cropBox)
+    }
+
+    if document.write(to: URL(fileURLWithPath: outputPath)) {
+        print("Cropped PDF saved successfully.")
+    } else {
+        print("Failed to save cropped PDF.")
+    }
+}
+

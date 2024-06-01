@@ -25,7 +25,7 @@ struct NodeView: View {
         }) {
             HStack {
                 if node.isDirectory {
-                    Image(systemName:isSelected ? "folder" : "folder")
+                    Image(systemName:isSelected ? "folder.fill" : "folder")
                      //   .resizable()
                         .foregroundColor( .brown)
                        //z                      .frame(width: 12, height: 12)//Image(systemName: isExpanded ? "folder" : "folder.fill")

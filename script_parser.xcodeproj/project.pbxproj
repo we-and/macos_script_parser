@@ -16,6 +16,10 @@
 		691A65C42C01B90D00606936 /* script_parserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691A65C32C01B90D00606936 /* script_parserUITestsLaunchTests.swift */; };
 		691D49B72C0A74F8009C5FCF /* NodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49B62C0A74F8009C5FCF /* NodeView.swift */; };
 		691D49B92C0A7512009C5FCF /* FileNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49B82C0A7512009C5FCF /* FileNodeView.swift */; };
+		691D49BB2C0AE4EB009C5FCF /* PdfContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49BA2C0AE4EB009C5FCF /* PdfContainer.swift */; };
+		691D49BD2C0AE4FE009C5FCF /* RectDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49BC2C0AE4FE009C5FCF /* RectDrawingView.swift */; };
+		691D49BF2C0AE70F009C5FCF /* RectDrawingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49BE2C0AE70F009C5FCF /* RectDrawingOverlay.swift */; };
+		691D49C12C0AE865009C5FCF /* ResizeHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691D49C02C0AE865009C5FCF /* ResizeHandle.swift */; };
 		699E4DB82C0378E800B6D65F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DB72C0378E800B6D65F /* AppDelegate.swift */; };
 		699E4DBA2C037C6400B6D65F /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DB92C037C6400B6D65F /* AppViewModel.swift */; };
 		699E4DBC2C03AFF900B6D65F /* TabTexte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699E4DBB2C03AFF900B6D65F /* TabTexte.swift */; };
@@ -250,6 +254,10 @@
 		691A65D02C01B94500606936 /* script-parser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "script-parser-Info.plist"; sourceTree = SOURCE_ROOT; };
 		691D49B62C0A74F8009C5FCF /* NodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeView.swift; sourceTree = "<group>"; };
 		691D49B82C0A7512009C5FCF /* FileNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNodeView.swift; sourceTree = "<group>"; };
+		691D49BA2C0AE4EB009C5FCF /* PdfContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfContainer.swift; sourceTree = "<group>"; };
+		691D49BC2C0AE4FE009C5FCF /* RectDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectDrawingView.swift; sourceTree = "<group>"; };
+		691D49BE2C0AE70F009C5FCF /* RectDrawingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectDrawingOverlay.swift; sourceTree = "<group>"; };
+		691D49C02C0AE865009C5FCF /* ResizeHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeHandle.swift; sourceTree = "<group>"; };
 		699E4DB72C0378E800B6D65F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		699E4DB92C037C6400B6D65F /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		699E4DBB2C03AFF900B6D65F /* TabTexte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTexte.swift; sourceTree = "<group>"; };
@@ -399,6 +407,10 @@
 				691A65A52C01B90C00606936 /* script_parserApp.swift */,
 				699E4EA82C05AFE500B6D65F /* BridgingHeader.h */,
 				699E4EB12C05B6F600B6D65F /* DocxReader.c */,
+				691D49BA2C0AE4EB009C5FCF /* PdfContainer.swift */,
+				691D49C02C0AE865009C5FCF /* ResizeHandle.swift */,
+				691D49BC2C0AE4FE009C5FCF /* RectDrawingView.swift */,
+				691D49BE2C0AE70F009C5FCF /* RectDrawingOverlay.swift */,
 				699E4EA92C05B01100B6D65F /* Docx.swift */,
 				699E4DB72C0378E800B6D65F /* AppDelegate.swift */,
 				699E4EA42C05AEFE00B6D65F /* IO.swift */,
@@ -881,15 +893,19 @@
 				699E4E992C05AB8C00B6D65F /* Pdf.swift in Sources */,
 				699E4E8C2C05359E00B6D65F /* Xtools.swift in Sources */,
 				699E4DC02C03B00B00B6D65F /* TabDialogOrder.swift in Sources */,
+				691D49BD2C0AE4FE009C5FCF /* RectDrawingView.swift in Sources */,
 				699E4E8F2C05359E00B6D65F /* XWorkBook.swift in Sources */,
 				699E4DC42C03B01C00B6D65F /* TabExport.swift in Sources */,
 				699E4EAA2C05B01100B6D65F /* Docx.swift in Sources */,
+				691D49C12C0AE865009C5FCF /* ResizeHandle.swift in Sources */,
 				699E4EB22C05B6F600B6D65F /* DocxReader.c in Sources */,
 				699E4E862C05359E00B6D65F /* XImage.swift in Sources */,
 				699E4DBE2C03B00200B6D65F /* TabPersonnages.swift in Sources */,
 				699E4DBC2C03AFF900B6D65F /* TabTexte.swift in Sources */,
 				699E4EA12C05ACC100B6D65F /* ParserUtils.swift in Sources */,
 				699E4E832C05359E00B6D65F /* SwiftXlsx.swift in Sources */,
+				691D49BF2C0AE70F009C5FCF /* RectDrawingOverlay.swift in Sources */,
+				691D49BB2C0AE4EB009C5FCF /* PdfContainer.swift in Sources */,
 				699E4DB82C0378E800B6D65F /* AppDelegate.swift in Sources */,
 				699E4E922C05359E00B6D65F /* XFontName.swift in Sources */,
 				699E4DBA2C037C6400B6D65F /* AppViewModel.swift in Sources */,
