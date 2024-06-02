@@ -24,15 +24,16 @@ func extractTextFromPDF(url: URL) -> String? {
         
         // Extract the text from the page
         if let pageText = page.string {
-            extractedText += pageText
+            extractedText += pageText+"\n"
         }
     }
     
     return extractedText
 }
 
-func cropPDF(pdfPath: String, outputPath: String, left: Double, right: Double, top: Double, bottom: Double) {
-    guard let document = PDFDocument(url: URL(fileURLWithPath: pdfPath)) else {
+func cropPDF(pdfPath: URL, outputPath: URL, rel:LeftBottomWidthHeight) {
+    
+    guard let document = PDFDocument(url: URL(fileURLWithPath: pdfPath.path)) else {
         print("Failed to open PDF document.")
         return
     }
@@ -45,15 +46,47 @@ func cropPDF(pdfPath: String, outputPath: String, left: Double, right: Double, t
         }
         
         var cropBox = page.bounds(for: .cropBox)
-        cropBox.origin.x += CGFloat(left)
-        cropBox.origin.y += CGFloat(bottom)
-        cropBox.size.width -= CGFloat(left + right)
-        cropBox.size.height -= CGFloat(top + bottom)
+        if pageIndex<1{
+            print("---")
+            print("cropbox or  origin x \(cropBox.origin.x)")
+            print("cropbox or origin y \(cropBox.origin.y)")
+            print("cropbox or size x \(cropBox.size.width)")
+            print("cropbox or size y \(cropBox.size.height)")
+            
+            print("remove width \(rel.left)")
+         //   print("remove width \(rel.right)")
+           // print("remove height \(rel.top)")
+            print("remove height \(rel.bottom)")
+        }  
+        //cropBox.origin.x += CGFloat(rel.left)
+       // cropBox.origin.y += CGFloat(rel.bottom)
+       // cropBox.size.width -= CGFloat(rel.width)
+       // cropBox.size.height -= CGFloat(rel.height)
         
+        
+//        cropBox.origin.x += CGFloat(rel.left)
+  //            cropBox.origin.y += CGFloat(rel.bottom)
+    //          cropBox.size.width = CGFloat(rel.width)
+      //        cropBox.size.height = CGFloat(rel.height)
+
+        
+        cropBox.origin.x = CGFloat(rel.left)
+              cropBox.origin.y = CGFloat(rel.bottom)
+              cropBox.size.width = CGFloat(rel.width)
+              cropBox.size.height = CGFloat(rel.height)
+        
+        if pageIndex<1{
+            print("croppage \(pageIndex)")
+            print("cropbox origin x \(cropBox.origin.x)")
+            print("cropbox origin y \(cropBox.origin.y)")
+            print("cropbox size x \(cropBox.size.width)")
+            print("cropbox size y \(cropBox.size.height)")
+        }
         page.setBounds(cropBox, for: .cropBox)
     }
 
-    if document.write(to: URL(fileURLWithPath: outputPath)) {
+    print("Try write at \(outputPath.path).")
+    if document.write(to: URL(fileURLWithPath: outputPath.path)) {
         print("Cropped PDF saved successfully.")
     } else {
         print("Failed to save cropped PDF.")

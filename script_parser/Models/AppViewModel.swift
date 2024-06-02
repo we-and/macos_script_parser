@@ -11,6 +11,10 @@ import Combine
 import SwiftUI
 import PDFKit
 class AppViewModel: ObservableObject {
+  
+    @StateObject private var  globalSettingsViewModel = GlobalSettingsViewModel()
+
+    
     @Published var shouldOpenFolder: Bool = false
 
     @Published  var currentResultFolder:URL?
@@ -26,11 +30,54 @@ class AppViewModel: ObservableObject {
      var dialogueCharacterNamesViewModel = DialogueCharacterNamesViewModel()
      var dialogueCharacterDialogViewModel =  DialogueCharacterDialogViewModel()
     
-    func openFolder() {
-        // Implement the function to handle folder opening logic
-        print("openFolder function called in ContentView.")
-    }
     
+    // Method to open file picker
+    @objc    func openScript() {
+        let openPanel = NSOpenPanel()
+        openPanel.title = "Choose a .txt file"
+        openPanel.allowedFileTypes = ["txt","pdf","rtf","docx","xlsx","doc"]
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = false
+
+        openPanel.begin { (result) in
+            if result == .OK, let url = openPanel.url {
+                
+                self.processFile(url)
+                
+//                let folder=getOutputFolder(
+  //              processScript1(scriptPath: url, outputPath: <#T##URL#>, scriptName: <#T##String#>, encoding: <#T##String.Encoding?#>)
+//                self.handleSelectedFile(url: url)
+            }
+        }
+            
+    }
+  
+
+    
+
+    @objc  func openPanelWindow() {
+        let panelWindow = NSWindow(
+            contentRect: NSRect(x: 0, y: 0, width: 400, height: 200),
+            styleMask: [.titled, .closable, .resizable],
+            backing: .buffered, defer: false)
+        panelWindow.center()
+        panelWindow.setFrameAutosaveName("Panel Window")
+       
+        panelWindow.contentView = NSHostingView(rootView: PanelView(
+            blockSize:$globalSettingsViewModel.blockSize,
+            onSave: {
+                // Handle save action
+                print("Save action triggered")
+                panelWindow.close()
+            },
+            onCancel: {
+                // Handle cancel action
+                print("Cancel action triggered")
+                panelWindow.close()
+            }
+        ))
+        panelWindow.makeKeyAndOrderFront(nil)
+    }
     
  func clearTables(){
      
@@ -68,20 +115,33 @@ class AppViewModel: ObservableObject {
     }
     func processPdfFile(url:URL){
         print("processPdfFile ")
-        showPDFWithRectangleDrawing(pdfPath:url.path)
+        showPDFWithRectangleDrawing(pdfPath:url)
     }
-    func doCrop(pdfPath:String,left: Double, right: Double, top: Double, bottom: Double){
-        let        outputPath=pdfPath.replacingOccurrences(of: ".pdf", with: ".cropped.pdf")
-        cropPDF(pdfPath: pdfPath,outputPath: outputPath , left: left, right: right, top: top, bottom: bottom)
-    }
-    func processCroppedPdfFile(url:URL){
+    func doCrop(pdfPath:URL,rel:LeftBottomWidthHeight)->URL?{
+
+        let (fileName, fileExtension) = getFileNameAndExtension(from: pdfPath)
+     
+
+        let outputFolder = getOutputFolder(fileName: fileName )
+        guard let outputFolder = outputFolder else{
+            return nil
+        }
+            let newfilename="cropped.pdf"
+        let newurl=createFileURL(folder:outputFolder,filename:newfilename)
+        
+        
+        
+        cropPDF(pdfPath: pdfPath,outputPath: newurl , rel:rel)
+return newurl
+        }
+    func processCroppedPdfFile(originalPdfUrl:URL,croppedPdfUrl:URL){
         print("processPdfFile ")
-        let text=extractTextFromPDF(url: url)
+        let text=extractTextFromPDF(url: croppedPdfUrl)
         guard let text=text else{
             print("TextExtraction failed")
             return
         }
-        let (fileName, fileExtension) = getFileNameAndExtension(from: url)
+        let (fileName, fileExtension) = getFileNameAndExtension(from: originalPdfUrl)
         let outputFolder = getOutputFolder(fileName: fileName )
         guard let outputFolder=outputFolder else{
             print("Cannot get outputFolder")
@@ -93,15 +153,15 @@ class AppViewModel: ObservableObject {
         print("url \(newurl.path)")
         processTxtFile(url: newurl)
     }
-    func showPDFWithRectangleDrawing(pdfPath: String) {
+    func showPDFWithRectangleDrawing(pdfPath: URL) {
         let pageNumber=10
             let window = NSWindow(
-                contentRect: NSRect(x: 0, y: 0, width: 800, height: 600),
+                contentRect: NSRect(x: 0, y: 0, width: 300, height: 200),
                 styleMask: [.titled, .closable, .resizable],
                 backing: .buffered, defer: false)
             window.center()
             window.setFrameAutosaveName("PDF Window")
-            window.contentView = NSHostingView(rootView: RectangleDrawingView(pdfPath: pdfPath, pageNumber: pageNumber ,onOk: { rect in
+        window.contentView = NSHostingView(rootView: RectangleDrawingView(pdfPath: pdfPath.path, pageNumber: pageNumber ,onOk: { rect in
                 // Convert rect to appropriate coordinates for cropping
                 self.doCrop1(pdfPath: pdfPath, cropRect: rect)
                 window.close()
@@ -112,8 +172,8 @@ class AppViewModel: ObservableObject {
             window.makeKeyAndOrderFront(nil)
         }
     
-    func doCrop1(pdfPath:String, cropRect:CGRect){
-        guard let document = PDFDocument(url: URL(fileURLWithPath: pdfPath)) else {
+    func doCrop1(pdfPath:URL, cropRect:LeftBottomWidthHeight){
+        guard let document = PDFDocument(url: URL(fileURLWithPath: pdfPath.path)) else {
                 print("Failed to open PDF document.")
                 return
             }
@@ -122,34 +182,26 @@ class AppViewModel: ObservableObject {
                 print("Failed to get PDF page.")
                 return
             }
-
-        // Calculate crop box in PDF coordinates
-         let mediaBox = page.bounds(for: .mediaBox)
-         let viewWidth = UIScreen.main.bounds.width // Assuming you use the screen width for the view size
-         let viewHeight = UIScreen.main.bounds.height // Assuming you use the screen height for the view size
-         
-         // Calculate scale factors based on the actual size of the displayed PDF page in the view
-         let scaleX = mediaBox.width / viewWidth
-         let scaleY = mediaBox.height / viewHeight
-         
-         let left = cropRect.minX * scaleX
-         let bottom = mediaBox.height - (cropRect.maxY * scaleY)
-         let width = cropRect.width * scaleX
-         let height = cropRect.height * scaleY
         
-        let right=left+width
-        let top = bottom-height
-        print("Crop")
+        print("crop left=\(cropRect.left)")
+        print("crop bottom=\(cropRect.bottom)")
+     //   print("crop right=\(cropRect.right)")
+       // print("crop top=\(cropRect.top)")
+       let croppedUrl = doCrop(pdfPath: pdfPath, rel:cropRect)
+        guard let croppedUrl=croppedUrl else{
+            return
+        }
+        processCroppedPdfFile(originalPdfUrl: pdfPath,croppedPdfUrl:croppedUrl)
+        if let appDelegate = NSApplication.shared.delegate as? AppDelegate {
+                   // Now you can access properties or methods of the AppDelegate
+                   appDelegate.setUpMenuBar()
+               } else {
+                   print("Failed to access AppDelegate")
+               }
+//        let extractedText=extractTextFromPDF(url:croppedUrl)
+  //      print("Extracted text")
         
-        print("Height \(height)")
-        print("Width \(width)")
-        print("Left \(left)")
-        print("Bottom \(bottom)")
-        print("Right \(right)")
-        print("Top \(top)")
-        print("Right \(right)")
-
-        doCrop(pdfPath: pdfPath, left: left, right:left+width, top: bottom-height, bottom: bottom)
+        
     }
     func processDocxFile(url:URL){
         readDocxFile(atPath: url.path)

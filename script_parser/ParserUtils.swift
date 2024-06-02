@@ -50,45 +50,65 @@ func countConsecutiveEmptyLines(filePath: URL, n: Int, encoding: String.Encoding
 }
 
 
-func getCharacterSeparator(scriptPath: URL, encoding: String.Encoding) -> String {
-    print("getCharacterSeparator")
+func findCharacterSeparator(scriptPath: URL, encoding: String.Encoding) -> String {
+    print("findCharacterSeparator")
     var best = "?"
     var bestVal = 0.0
     var nLines = 0
     
+    //try one line speech separators
     for sep in characterSeparators {
         nLines = 0
         var nMatches = 0
-        
-        do {
-            let fileContents = try String(contentsOf: scriptPath, encoding: encoding)
-            let lines = fileContents.split(separator: "\n", omittingEmptySubsequences: false)
-            
-            for line in lines {
-                let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !trimmedLine.isEmpty {
-                    nLines += 1
-                    
-                    var isMatch = false
-                    if sep == "CHARACTER_SEMICOL_TAB" {
-                        isMatch = matchesCharactername_NAME_SEMICOLON_OPTSPACES_TAB_TEXT(text: String(trimmedLine))
-                    } else if sep == "CHARACTER_SPACES" {
-                        isMatch = matchesCharactername_NAME_ATLEAST8SPACES_TEXT(text: String(trimmedLine))
-                    } else if sep == "CHARACTER_TAB" {
-                        isMatch = matchesCharactername_NAME_ATLEAST1TAB_TEXT(text: String(trimmedLine))
-                    }
-                    
-                    if isMatch {
-                        nMatches += 1
+            do {
+                let fileContents = try String(contentsOf: scriptPath, encoding: encoding)
+
+                if  sep.contains( "SINGLELINE"){
+                let lines = fileContents.split(separator: "\n", omittingEmptySubsequences: false)
+                
+                for line in lines {
+                    let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
+                    if !trimmedLine.isEmpty {
+                        nLines += 1
+                        
+                        var isMatch = false
+                        if sep == "CHARACTER_SINGLELINE_SEMICOL_TAB" {
+                            isMatch = matchesCharactername_NAME_SEMICOLON_OPTSPACES_TAB_TEXT(text: String(trimmedLine))
+                        } else if sep == "CHARACTER_SINGLELINE_SPACES" {
+                            isMatch = matchesCharactername_NAME_ATLEAST8SPACES_TEXT(text: String(trimmedLine))
+                        } else if sep == "CHARACTER_SINGLELINE_TAB" {
+                            isMatch = matchesCharactername_NAME_ATLEAST1TAB_TEXT(text: String(trimmedLine))
+                        }
+                        
+                        if isMatch {
+                            nMatches += 1
+                        }
                     }
                 }
+                
+                let pc = round(100 * Double(nMatches) / Double(nLines))
+                print("  > Test character sep: \(sep) \(nMatches)/\(nLines) \(pc)")
+                    if pc > 0.1{
+                        if pc > bestVal {
+                            bestVal = pc
+                            best = sep
+                            print("Set best \(best)")
+
+                        }
+                    }
+                
             }
-            
-            let pc = round(100 * Double(nMatches) / Double(nLines))
-            print("  > Test character sep: \(sep) \(nMatches)/\(nLines) \(pc)")
-            if pc > bestVal {
-                bestVal = pc
-                best = sep
+            if best=="?"{
+                print("Try multiline")
+                let result = countUppercaseAndNonUppercaseLines(in:fileContents )
+                let totalLines = nLines
+                let uppercasePercentage = totalLines > 0 ? (Double(result.uppercaseLines) / Double(totalLines))  : 0
+                   let nonUppercasePercentage = totalLines > 0 ? (Double(result.nonUppercaseLines) / Double(totalLines))  : 0
+                                   print("Lines \(nLines) Uppercase \(result.uppercaseLines) \(uppercasePercentage) NonUppercase \(result.nonUppercaseLines) \(nonUppercasePercentage)")
+                if uppercasePercentage > 0.1 && nonUppercasePercentage>0.1{
+                    best="CHARACTER_MULTILINE"
+                    print("Set best \(best)")
+                }
             }
         } catch {
             print("Error reading file: \(error)")
@@ -96,6 +116,22 @@ func getCharacterSeparator(scriptPath: URL, encoding: String.Encoding) -> String
     }
     
     return best
+}
+func countUppercaseAndNonUppercaseLines(in text: String) -> (uppercaseLines: Int, nonUppercaseLines: Int) {
+    let lines = text.components(separatedBy: "\n")
+    
+    var uppercaseCount = 0
+    var nonUppercaseCount = 0
+    
+    for line in lines {
+        if line == line.uppercased() {
+            uppercaseCount += 1
+        } else {
+            nonUppercaseCount += 1
+        }
+    }
+    
+    return (uppercaseCount, nonUppercaseCount)
 }
 func matchesFormatParenthesisNameTimecode(line: String) -> Bool {
     let pattern = "\\([^)]+-\\s*\\d{2}:\\d{2}:\\d{2}:\\d{2}\\)$"
@@ -227,11 +263,11 @@ func matchesPattern(line: String, pattern: String) -> Bool {
 
 func isMatchingCharacterSpeaking(line: String, characterMode: String) -> Bool {
     switch characterMode {
-    case "CHARACTER_TAB":
+    case "CHARACTER_SINGLELINE_TAB":
         return matchesCharactername_NAME_ATLEAST1TAB_TEXT(text: line)
-    case "CHARACTER_SPACES":
+    case "CHARACTER_SINGLELINE_SPACES":
         return matchesCharactername_NAME_ATLEAST8SPACES_TEXT(text: line)
-    case "CHARACTER_SEMICOL_TAB":
+    case "CHARACTER_SINGLELINE_SEMICOL_TAB":
         return matchesCharactername_NAME_SEMICOLON_OPTSPACES_TAB_TEXT(text: line)
     default:
         print("ERROR 1 wrong mode=\(characterMode)")
@@ -333,9 +369,9 @@ func testEncoding(scriptPath: String) -> String {
 }
 func extractSpeech(line: String, characterMode: String, characterName: String) -> String {
     switch characterMode {
-    case "CHARACTER_TAB", "CHARACTER_SPACES":
+    case "CHARACTER_SINGLELINE_TAB", "CHARACTER_SINGLELINE_SPACES":
         return line.replacingOccurrences(of: characterName, with: "").trimmingCharacters(in: .whitespacesAndNewlines)
-    case "CHARACTER_SEMICOL_TAB":
+    case "CHARACTER_SINGLELINE_SEMICOL_TAB":
         return extractSpeech_NAME_SEMICOLON_OPTSPACES_TAB_TEXT(line: line, characterName: characterName)
     default:
         print("ERROR 2  wrong mode=\(characterMode)")
@@ -345,11 +381,11 @@ func extractSpeech(line: String, characterMode: String, characterName: String) -
 }
 func extractCharacterName(line: String, characterMode: String) -> String? {
     switch characterMode {
-    case "CHARACTER_TAB":
+    case "CHARACTER_SINGLELINE_TAB":
         return extractCharactername_NAME_ATLEAST1TAB_TEXT(line: line)
-    case "CHARACTER_SPACES":
+    case "CHARACTER_SINGLELINE_SPACES":
         return extractCharactername_NAME_ATLEAST8SPACES_TEXT(line: line)
-    case "CHARACTER_SEMICOL_TAB":
+    case "CHARACTER_SINGLELINE_SEMICOL_TAB":
         return extractCharactername_NAME_SEMICOLON_OPTSPACES_TAB_TEXT(line: line)
     default:
         print("ERROR 3 wrong mode=\(characterMode)")

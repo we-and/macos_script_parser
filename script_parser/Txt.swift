@@ -7,6 +7,7 @@
 
 import Foundation
 func saveStringToFile(_ string: String, to url: URL) {
+    print("saveStringToFile \(url.path)")
     do {
         // Write the string to the specified URL
         try string.write(to: url, atomically: true, encoding: .utf8)

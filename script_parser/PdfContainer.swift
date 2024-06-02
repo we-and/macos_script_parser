@@ -17,10 +17,14 @@ struct PDFViewContainer: NSViewRepresentable {
         if let document = PDFDocument(url: URL(fileURLWithPath: pdfPath)) {
             pdfView.document = document
             pdfView.displayMode = .singlePage
-            pdfView.autoScales = true
+            pdfView.autoScales = false
             if pageNumber > 0 && pageNumber <= document.pageCount {
                 pdfView.go(to: PDFDestination(page: document.page(at: pageNumber - 1)!, at: CGPoint.zero))
             }
+            pdfView.pageShadowsEnabled = false
+                  
+            pdfView.pageBreakMargins = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
         }
         return pdfView
     }

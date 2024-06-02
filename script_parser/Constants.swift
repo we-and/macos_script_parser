@@ -24,9 +24,10 @@ let actionVerbs = ["says", "asks", "whispers", "shouts", "murmurs", "exclaims"]
 let splitables=[" TALK TO "," TO "];
 
 let characterSeparators = [
-    "CHARACTER_SEMICOL_TAB",
-    "CHARACTER_TAB",
-    "CHARACTER_SPACES"
+    "CHARACTER_SINGLELINE_SEMICOL_TAB",
+    "CHARACTER_SINGLELINE_TAB",
+    "CHARACTER_SINGLELINE_SPACES",
+    "CHARACTER_MULTILINE"
 ]
 
 let countMethods = [
