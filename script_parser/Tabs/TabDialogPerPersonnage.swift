@@ -22,7 +22,7 @@ struct DialogueCharacterTableHeaderRight: View {
         HStack {
             Text("Ligne").frame(maxWidth: .infinity, alignment: .leading)
             Text("Dialogue").frame(maxWidth: .infinity, alignment: .leading)
-        Text("Characteres").frame(maxWidth: .infinity, alignment: .leading)
+        Text("Caractères").frame(maxWidth: .infinity, alignment: .leading)
             Text("Repliques").frame(maxWidth: .infinity, alignment: .leading)
         }
         .font(.headline)

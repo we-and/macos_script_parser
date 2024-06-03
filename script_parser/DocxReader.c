@@ -18,21 +18,157 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+/*
+// Function to extract text content from a cell node
+char* extract_text_from_cell(xmlNode *cell_node) {
+    xmlNode *text_node = cell_node->children;
+    xmlBufferPtr buffer = xmlBufferCreate();
+    
+    while (text_node) {
+        if (text_node->type == XML_ELEMENT_NODE && strcmp((const char *)text_node->name, "r") == 0) {
+            xmlNode *t_node = text_node->children;
+            while (t_node) {
+                if (t_node->type == XML_ELEMENT_NODE && strcmp((const char *)t_node->name, "t") == 0) {
+                    xmlChar *content = xmlNodeGetContent(t_node);
+                    if (content) {
+                        xmlBufferCat(buffer, content);
+                        xmlFree(content);
+                    }
+                }
+                t_node = t_node->next;
+            }
+        }
+        text_node = text_node->next;
+    }
 
+    char *result = (char *)malloc(buffer->use + 1);
+    strcpy(result, (char *)buffer->content);
+    xmlBufferFree(buffer);
+    return result;
+}
+
+// Function to process a tbl node and return a 2-dimensional array with cell text content
+char*** extract_table_text(xmlNode *tbl_node, int *rows, int *cols) {
+    int max_cols = 0;
+    int row_count = 0;
+
+    // First pass to count rows and columns
+    xmlNode *row_node = tbl_node->children;
+    while (row_node) {
+        if (row_node->type == XML_ELEMENT_NODE && strcmp((const char *)row_node->name, "tr") == 0) {
+            int col_count = 0;
+            xmlNode *cell_node = row_node->children;
+            while (cell_node) {
+                if (cell_node->type == XML_ELEMENT_NODE && strcmp((const char *)cell_node->name, "tc") == 0) {
+                    col_count++;
+                }
+                cell_node = cell_node->next;
+            }
+            if (col_count > max_cols) {
+                max_cols = col_count;
+            }
+            row_count++;
+        }
+        row_node = row_node->next;
+    }
+
+    // Allocate memory for the 2-dimensional array
+    char ***table = (char ***)malloc(row_count * sizeof(char **));
+    for (int i = 0; i < row_count; i++) {
+        table[i] = (char **)malloc(max_cols * sizeof(char *));
+        for (int j = 0; j < max_cols; j++) {
+            table[i][j] = NULL;
+        }
+    }
+
+    // Second pass to fill the array with cell text content
+    int row_index = 0;
+    row_node = tbl_node->children;
+    while (row_node) {
+        if (row_node->type == XML_ELEMENT_NODE && strcmp((const char *)row_node->name, "tr") == 0) {
+            int col_index = 0;
+            xmlNode *cell_node = row_node->children;
+            while (cell_node) {
+                if (cell_node->type == XML_ELEMENT_NODE && strcmp((const char *)cell_node->name, "tc") == 0) {
+                    table[row_index][col_index] = extract_text_from_cell(cell_node);
+                    col_index++;
+                }
+                cell_node = cell_node->next;
+            }
+            row_index++;
+        }
+        row_node = row_node->next;
+    }
+
+    *rows = row_count;
+    *cols = max_cols;
+    return table;
+}*/
+
+typedef struct {
+    char ***table;
+    int rows;
+    int cols;
+} Table;
+
+
+typedef void (*tables_callback)(Table *tables, int table_count);
 
 // Function to count the number of rows and columns
 void count_rows_and_cols(xmlNode *tbl_node, int *rows, int *cols) {
     *rows = 0;
     *cols = 0;
     for (xmlNode *row_node = tbl_node->children; row_node; row_node = row_node->next) {
-        
+//        printf("     >  Node name: %s\n", row_node->name);
+
         if (row_node->type == XML_ELEMENT_NODE && strcmp((const char*)row_node->name, "tr") == 0) {
             (*rows)++;
 //            printf("row\n");
             int current_cols = 0;
             for (xmlNode *cell_node = row_node->children; cell_node; cell_node = cell_node->next) {
+              //  printf("    >  CellNode name: %s\n", cell_node->name);
                 if (cell_node->type == XML_ELEMENT_NODE && strcmp((const char*)cell_node->name, "tc") == 0) {
   //                  printf("cell\n");
+                  //  printf("    >  tc : %s\n", cell_node->content);
+                    
+                    xmlNode *cell_text_node = cell_node->children;
+                    while (cell_text_node) {
+        //                printf("    >  tc > children = %s\n", cell_text_node->content);
+                        if (cell_text_node->type == XML_ELEMENT_NODE && strcmp((const char *)cell_text_node->name, "p") == 0) {
+      //                      printf("    >      tc > p = %s\n",cell_text_node->content);
+                            // Handle paragraph in cell
+                            xmlNode *text_node = cell_text_node->children;
+                            while (text_node) {
+    //                            printf("        >  tc > p > children : %s\n", text_node->name);
+                                if (text_node->type == XML_ELEMENT_NODE && strcmp((const char *)text_node->name, "t") == 0) {
+  //                                  printf("    >      tc > p > t");
+                                   // callback((const char *)xmlNodeGetContent(text_node));
+                                }
+                                if (text_node->type == XML_ELEMENT_NODE && strcmp((const char *)text_node->name, "r") == 0) {
+//                                    printf("    >      tc > p > r %s\n",text_node->content);
+
+                                    xmlNode *rchild_node = text_node->children;
+                                    while (rchild_node) {
+                                        //printf("    >      tc > p > r > children %s\n",rchild_node->name);
+                                        
+                                        if (rchild_node->type == XML_ELEMENT_NODE && strcmp((const char *)rchild_node->name, "t") == 0) {
+                                        //    printf("    >     tc > p > r > t %s\n",rchild_node->content);
+                                           // callback((const char *)xmlNodeGetContent(text_node));
+                                        }
+                                        
+                                        rchild_node = rchild_node->next;
+
+                                        
+                                    }
+                                    // callback((const char *)xmlNodeGetContent(text_node));
+                                }
+                                text_node = text_node->next;
+                            }
+                        }
+                        cell_text_node = cell_text_node->next;
+                    }
+                    
+                    
                     current_cols++;
                 }
             }
@@ -280,33 +416,33 @@ void read_docx(const char *filename, void (*callback)(const char *)) {
         return;
     }
     printf("c read_docx 2\n");
-    printf("Root name: %s\n", root_element->name);
+    printf(" >  Root name: %s\n", root_element->name);
     xmlNode * body_node=find_body_node(root_element);
     
     if (body_node && strcmp((const char *)body_node->name, "body") == 0) {
-        printf("Body name: %s\n", root_element->name);
+        printf(" >  Body name: %s\n", root_element->name);
         xmlNode* text_node= body_node->children;
 
         
         while (text_node) {
-            printf("Node type: children\n");
+            printf(" >  Node type: children\n");
            // if (text_node->type == XML_ELEMENT_NODE && strcmp((const char *)text_node->name, "t") == 0) {
             xmlNode * tbl_node=find_table_node(body_node);
             if (tbl_node!=NULL){
                 
-                    printf("Node type: table\n");
+                    printf(" >  Node type: table\n");
                 int rows, cols;
                 count_rows_and_cols(tbl_node, &rows, &cols);
-                printf("Table size: %d x %d\n", rows,cols);
-              char*** table=  get_table(tbl_node);
-                print_table_contents(table, rows, cols);
-                        free_table_contents(table, rows, cols);
+                printf(" >  Table size: %d x %d\n", rows,cols);
+                char*** table=  get_table(tbl_node);
+             //   print_table_contents(table, rows, cols);
+                free_table_contents(table, rows, cols);
 
 //                char * res=read_docx_node(tbl_node);
             }
             text_node = text_node->next;
         }
-        
+            
    
     } else {
         printf("Error: root element is not <body>\n");

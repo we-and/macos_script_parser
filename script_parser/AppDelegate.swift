@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate,ObservableObject {
         window.makeKeyAndOrderFront(nil)
         window.delegate = self  // Set delegate to handle window close
         
-        copyResourceFiles();
+        //copyResourceFiles();
         // Set up the menu bar
         ///      setUpMenuBar()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

@@ -9,8 +9,123 @@ import Foundation
 import CoreXLSX
 //import SwiftXLSX
 //import xlsxwriter
+/*
+func processSingleLine(lines:[String],characterMode:String,sceneSeparator:String){
+    var breakdown = [BreakdownItem1]()
+    var sceneCharactersMap = [String: Set<String>]()
+    var characterLineCountMap = [String: Int]()
+    var characterOrderMap = [String: Int]()
+    var characterTextLengthMap = [String: Int]()
+    var characterSceneMap = [String: Set<String>]()
+    var characterCount = 1
+    var currentSceneCount = 1
+    var currentSceneId = "Scene 1"
+    var isEmptyLine=false
+    var lineIdx = 1
+    var wasEmptyLine = false
+    
+    var currentBreakdown:[BreakdownItem1]=[]
+    var currentBreakdownPerCharacter:[String:[BreakdownItem1]]=[:]
+    var dialogueOrderData: [DialogueOrderTableRow] = []
+    var dialogueCharacterNamesData:[String] = []
+    var characterData:[CharacterTableRow]=[];
+    
+   
+    
+    for line in lines {
+        let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
+        let isNewEmptyLine = trimmedLine.isEmpty
 
+        if !trimmedLine.isEmpty {
 
+        if characterMode.contains("SINGLELINE"){
+            
+            if sceneSeparator == "EMPTYLINES_SCENE_SEPARATOR" && !isNewEmptyLine && wasEmptyLine && trimmedLine.isEmpty {
+                currentSceneCount += 1
+                currentSceneId = extractSceneName(from: String(line), sceneSeparator: sceneSeparator, currentSceneCount: currentSceneCount)
+                // print("  > Scene Line: \(currentSceneId)")
+            }
+            
+                if isSceneLine(line: String(line)) || (isEmptyLine && wasEmptyLine) {
+                    currentSceneCount += 1
+                    currentSceneId = extractSceneName(from: String(line), sceneSeparator: sceneSeparator, currentSceneCount: currentSceneCount)
+                    
+                    
+                    let breakdownItem:BreakdownItem1=BreakdownItem1( sceneId: currentSceneId,
+                                                                     
+                                                                     lineIdx: lineIdx,
+                                                                     
+                                                                     type: "SCENE_SEP"
+                                                                     
+                    )
+                    
+                    breakdown.append(breakdownItem)
+                    //  print("  > Scene Line: \(currentSceneId)")
+                } else {
+                    let isSpeaking = isCharacterSpeaking(line: trimmedLine, characterMode: characterMode)
+                    if isSpeaking {
+                        var characterName = extractCharacterName(line: trimmedLine, characterMode: characterMode)
+                        if  characterName != nil{
+                            
+                            characterName = filterCharacterName( characterName!)
+                            if isCharacterNameValid( characterName) {
+                                let spokenText = extractSpeech(line: trimmedLine,characterMode: characterMode, characterName: characterName!)
+                                let filtered_spokenText=filterSpeech(spokenText)
+                                // let breakdownItem:BreakdownItem=["scene_id": currentSceneId, "character_raw": characterName, "line_idx": lineIdx, "speech": spokenText, "type": "SPEECH", "character": characterName]
+                                let breakdownItem:BreakdownItem1=BreakdownItem1( character: characterName!,
+                                                                                 
+                                                                                 character_raw: characterName!,
+                                                                                 speech: filtered_spokenText,
+                                                                                 speech_raw: spokenText,
+                                                                                 
+                                                                                 sceneId: currentSceneId,
+                                                                                 
+                                                                                 lineIdx: lineIdx,
+                                                                                 
+                                                                                 type: "SPEECH"
+                                                                                 
+                                )
+                                breakdown.append(breakdownItem)
+                                
+                                let caracteres=computeLength(by: ComputeMethod.all, for: filtered_spokenText)
+                                let repliques=computeLength(by: ComputeMethod.blocks50, for: filtered_spokenText)
+                                dialogueOrderData.append(DialogueOrderTableRow( ligne:lineIdx, personnage:characterName!, dialog:filtered_spokenText, dialog_raw: spokenText, caracteres:caracteres , repliques:repliques))
+                                print("  > Add \(characterName!) \(spokenText)")
+                                
+                                if currentBreakdownPerCharacter.keys.contains(characterName!) {
+                                    currentBreakdownPerCharacter[characterName!]?.append(breakdownItem)
+                                }else{
+                                    currentBreakdownPerCharacter[characterName!]=[
+                                        breakdownItem
+                                    ]
+                                }
+                                
+                                
+                            }
+                        }
+                    } else {
+                        
+                        let breakdownItem:BreakdownItem1=BreakdownItem1(
+                            //  sceneId: currentSceneId,
+                            sceneId: currentSceneId,   text:trimmedLine,
+                            lineIdx: lineIdx,
+                            
+                            type: "NONSPEECH"
+                            
+                        )
+                        
+                        breakdown.append(breakdownItem)
+                    }
+                }
+        }else{//if multiline
+            
+        }
+        }
+
+            wasEmptyLine = trimmedLine.isEmpty
+        lineIdx += 1
+    }
+}*/
 func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encoding: String.Encoding?) -> (Bool,[BreakdownItem1],[String:[BreakdownItem1]],[DialogueOrderTableRow],[CharacterTableRow]){
     print("  > -----------------------------------")
     print("  > SCRIPT PARSER version 1.3")
@@ -54,14 +169,14 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
         return  empty
     }
 
-    if fileExtension.lowercased() == "pdf" {
-        guard let (convertedFilePath, encoding) = convertPdfToTxt(filePath: scriptPath) else {
-            print("  > Conversion failed")
-            return empty
-    }
-        processScript1(scriptPath: convertedFilePath, outputPath: outputPath, scriptName: scriptName,encoding: encoding)
-        return  empty
-    }
+//    if fileExtension.lowercased() == "pdf" {
+  //      guard let (convertedFilePath, encoding) = convertPdfToTxt(filePath: scriptPath) else {
+    //        print("  > Conversion failed")
+      //      return empty
+    //}
+      //  processScript1(scriptPath: convertedFilePath, outputPath: outputPath, scriptName: scriptName,encoding: encoding)
+        //return  empty
+    //}
 
     var breakdown = [BreakdownItem1]()
     var sceneCharactersMap = [String: Set<String>]()
@@ -72,8 +187,11 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
     var characterCount = 1
     var currentSceneCount = 1
     var currentSceneId = "Scene 1"
-
     var isEmptyLine=false
+    
+    var multilineCharacter=""
+    var multilineSpeech=""
+    
     let detected:String.Encoding = detectFileEncoding(filePath: scriptPath);
     var encodingUsed:String.Encoding = detected
     if encoding != nil{
@@ -98,38 +216,37 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
     }
 
     do {
+        print("Add fileContents ")
+
         let fileContents = try String(contentsOf: scriptPath, encoding: encodingUsed )
+    
         let lines = fileContents.split(separator: "\n", omittingEmptySubsequences: false)
         var lineIdx = 1
         var wasEmptyLine = false
-        
+        print("Lines \(lines.count)")
+
         for line in lines {
+            print("---------------")
+            print("Line \(line)")
+
             let trimmedLine = line.trimmingCharacters(in: .whitespacesAndNewlines)
             let isNewEmptyLine = trimmedLine.isEmpty
 
             if !trimmedLine.isEmpty {
-
-            if characterMode.contains("SINGLELINE"){
-                
-                if sceneSeparator == "EMPTYLINES_SCENE_SEPARATOR" && !isNewEmptyLine && wasEmptyLine && trimmedLine.isEmpty {
-                    currentSceneCount += 1
-                    currentSceneId = extractSceneName(from: String(line), sceneSeparator: sceneSeparator, currentSceneCount: currentSceneCount)
-                    // print("  > Scene Line: \(currentSceneId)")
-                }
-                
+         //       print("not empty")
+                if characterMode.contains("SINGLELINE"){
+                    if sceneSeparator == "EMPTYLINES_SCENE_SEPARATOR" && !isNewEmptyLine && wasEmptyLine && trimmedLine.isEmpty {
+                        currentSceneCount += 1
+                        currentSceneId = extractSceneName(from: String(line), sceneSeparator: sceneSeparator, currentSceneCount: currentSceneCount)
+                        // print("  > Scene Line: \(currentSceneId)")
+                    }
+                    
                     if isSceneLine(line: String(line)) || (isEmptyLine && wasEmptyLine) {
                         currentSceneCount += 1
                         currentSceneId = extractSceneName(from: String(line), sceneSeparator: sceneSeparator, currentSceneCount: currentSceneCount)
-                        
-                        
                         let breakdownItem:BreakdownItem1=BreakdownItem1( sceneId: currentSceneId,
-                                                                         
                                                                          lineIdx: lineIdx,
-                                                                         
-                                                                         type: "SCENE_SEP"
-                                                                         
-                        )
-                        
+                                                                         type: "SCENE_SEP")
                         breakdown.append(breakdownItem)
                         //  print("  > Scene Line: \(currentSceneId)")
                     } else {
@@ -144,18 +261,12 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
                                     let filtered_spokenText=filterSpeech(spokenText)
                                     // let breakdownItem:BreakdownItem=["scene_id": currentSceneId, "character_raw": characterName, "line_idx": lineIdx, "speech": spokenText, "type": "SPEECH", "character": characterName]
                                     let breakdownItem:BreakdownItem1=BreakdownItem1( character: characterName!,
-                                                                                     
                                                                                      character_raw: characterName!,
                                                                                      speech: filtered_spokenText,
                                                                                      speech_raw: spokenText,
-                                                                                     
                                                                                      sceneId: currentSceneId,
-                                                                                     
                                                                                      lineIdx: lineIdx,
-                                                                                     
-                                                                                     type: "SPEECH"
-                                                                                     
-                                    )
+                                                                                     type: "SPEECH"                                    )
                                     breakdown.append(breakdownItem)
                                     
                                     let caracteres=computeLength(by: ComputeMethod.all, for: filtered_spokenText)
@@ -170,34 +281,111 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
                                             breakdownItem
                                         ]
                                     }
-                                    
-                                    
                                 }
                             }
                         } else {
-                            
                             let breakdownItem:BreakdownItem1=BreakdownItem1(
-                                //  sceneId: currentSceneId,
-                                sceneId: currentSceneId,   text:trimmedLine,
+                                sceneId: currentSceneId,
+                                text:trimmedLine,
                                 lineIdx: lineIdx,
-                                
                                 type: "NONSPEECH"
-                                
                             )
-                            
                             breakdown.append(breakdownItem)
                         }
                     }
-            }else{//if multiline
-                
-                
-            }
-            }
+                }else{
+                    print("line \(line)")
+                    let isCharacterName=matchesCharactername_NAME_UPPERCASE(text:trimmedLine)
+                    if isCharacterName{
 
+                        //flush
+                        if multilineSpeech.count>0{
+                            let filtered_spokenText=filterSpeech(multilineSpeech)
+                            let breakdownItem:BreakdownItem1=BreakdownItem1( character: multilineCharacter,
+                                                                             
+                                                                             character_raw: multilineCharacter,
+                                                                             speech: filtered_spokenText,
+                                                                             speech_raw: multilineSpeech,
+                                                                             sceneId: currentSceneId,
+                                                                             lineIdx: lineIdx,
+                                                                             type: "SPEECH"                        )
+                            breakdown.append(breakdownItem)
+                            print(" -> Add \(multilineCharacter) \(multilineSpeech)")
+                            
+                            
+                            //data
+                            let caracteres=computeLength(by: ComputeMethod.all, for:filtered_spokenText )
+                            let repliques=computeLength(by: ComputeMethod.blocks50, for: filtered_spokenText)
+                            dialogueOrderData.append(DialogueOrderTableRow( ligne:lineIdx, personnage:multilineCharacter, dialog: filtered_spokenText, dialog_raw: multilineSpeech, caracteres:caracteres , repliques:repliques))
+                           // print("  > Add \(characterName!) \(spokenText)")
+
+                            if currentBreakdownPerCharacter.keys.contains(multilineCharacter) {
+                                currentBreakdownPerCharacter[multilineCharacter]?.append(breakdownItem)
+                            }else{
+                                currentBreakdownPerCharacter[multilineCharacter]=[
+                                    breakdownItem
+                                ]
+                            }
+                            
+                            multilineSpeech=""
+                        }
+                        
+
+                        let lineCharacterName = extractCharacterName(line: trimmedLine, characterMode: characterMode)
+                        if  lineCharacterName != nil{
+                            let filteredCharacterName = filterCharacterName( lineCharacterName!)
+                            multilineCharacter=filteredCharacterName
+                            print("Add character \(multilineCharacter)")
+                        }
+                    }else{
+                        print("Add speech \(trimmedLine)")
+                        multilineSpeech = "\(multilineSpeech) \(trimmedLine)"
+                        print("set speech \(multilineSpeech)")
+                     
+                    
+                    }
+                
+                }
+            }//else{//if multiline
+               
+ 
                 wasEmptyLine = trimmedLine.isEmpty
             lineIdx += 1
         }
         
+        //flush
+        if multilineSpeech.count>0{
+            let filtered_spokenText=filterSpeech(multilineSpeech)
+          
+            let breakdownItem:BreakdownItem1=BreakdownItem1( character: multilineCharacter,
+                                                             
+                                                             character_raw: multilineCharacter,
+                                                             speech: filtered_spokenText,
+                                                             speech_raw: multilineCharacter,
+                                                             sceneId: currentSceneId,
+                                                             lineIdx: lineIdx,
+                                                             type: "SPEECH"                        )
+            breakdown.append(breakdownItem)
+            
+            print("Add \(multilineCharacter) \(multilineSpeech)")
+            //data
+            let caracteres=computeLength(by: ComputeMethod.all, for:filtered_spokenText )
+            let repliques=computeLength(by: ComputeMethod.blocks50, for: filtered_spokenText)
+            dialogueOrderData.append(DialogueOrderTableRow( ligne:lineIdx, personnage:multilineCharacter, dialog:filtered_spokenText, dialog_raw: multilineSpeech, caracteres:caracteres , repliques:repliques))
+           // print("  > Add \(characterName!) \(spokenText)")
+
+            if currentBreakdownPerCharacter.keys.contains(multilineCharacter) {
+                currentBreakdownPerCharacter[multilineCharacter]?.append(breakdownItem)
+            }else{
+                currentBreakdownPerCharacter[multilineCharacter]=[
+                    breakdownItem
+                ]
+            }
+        }
+
+        
+        print(" >  Export now")
+
         let allCharacters = getAllCharacters(from: breakdown)
         let mergeres = mergeBreakdownCharacterTalkingTo(breakdown: breakdown, allCharacters: allCharacters)
         breakdown=mergeres.0
@@ -231,45 +419,11 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
             }
             
         }
-        
-        
         currentBreakdown=breakdown
         
-        
-        //currentResultFolder=outputPath
         print("Current result folder \(outputPath)")
         exportDialogToCSV(items: breakdown,to:outputPath, filename:  "dialog.csv")
         exportComptageToCSV(items: comptage,to:outputPath, filename: "comptage.csv")
-        
-        
-        
-        /*
-        //EXPORTS
-        for item in breakdown {
-            if item.type == "SPEECH" {
-                let characterName = item.character as! String
-                if characterOrderMap[characterName] == nil {
-                    characterOrderMap[characterName] = characterCount
-                    characterCount += 1
-                }
-                
-                characterLineCountMap[characterName, default: 0] += 1
-                let spokenText = item.speech as! String
-                let length = computeLength(line: spokenText, method: countingMethod)
-                characterTextLengthMap[characterName, default: 0] += length
-                
-                let sceneId = item.sceneId as! String
-                sceneCharactersMap[characterName, default: Set()].insert(sceneId)
-                characterSceneMap[sceneId, default: Set()].insert(characterName)
-            }
-        }
-        
-        //            writeCharacterMapToFile(characterMap: characterSceneMap, filePath: outputPath + "character_by_scenes.txt")
-        //writeCharacterMapToFile(characterMap: sceneCharactersMap, filePath: outputPath + "scenes_by_character.txt")
-        //writeCharacterMapToFile(characterMap: characterLineCountMap, filePath: outputPath + "character_linecount.txt")
-        // writeCharacterMapToFile(characterMap: characterOrderMap, filePath: outputPath + "character_order.txt")
-        // writeCharacterMapToFile(characterMap: characterTextLengthMap, filePath: outputPath + "character_textlength.txt")
-        */
         
         let csvFilePath = outputPath.path + scriptName + "-recap-detailed.csv"
         var data: [[String]] = []
@@ -284,7 +438,7 @@ func processScript1(scriptPath: URL, outputPath: URL, scriptName: String, encodi
         //  convertCsvToXlsx(csvFilePath: csvFilePath, xlsxFilePath: outputPath + scriptName + "-recap-detailed.xlsx", sheetName: scriptName, encoding: encodingUsed)
         
         print("  > Parsing done.")
-    
+        
         return (true,currentBreakdown,currentBreakdownPerCharacter,dialogueOrderData,characterData)
     } catch {
         print("Error reading file: \(error)")
